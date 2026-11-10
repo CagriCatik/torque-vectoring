@@ -17,7 +17,7 @@ source .venv/bin/activate
 python -m pip install -e '.[dev,nmpc,viz]'
 
 # 3. For bit-reproducible numerical environments on macOS arm64 (Python 3.13), constrain to the lockfile:
-python -m pip install -e '.[dev,nmpc,viz]' -c requirements-lock-macos-arm64-py313.txt
+python -m pip install -e '.[dev,nmpc,viz]' -c requirements.txt
 ```
 
 ### Dependency Groups (`pyproject.toml`)
@@ -49,12 +49,11 @@ torquevector validate --suite smoke
 
 ## 3 Output Directory Structure (`results/`)
 
-Every simulation command creates a self-contained, timestamped run directory under `results/runs/<timestamp>_<label>/`:
+By default, simulation commands create timestamped run directories under `results/runs/<timestamp>_<label>/`. Use `--results-dir results --run-name <scenario>` (or run `.venv/bin/python scripts/reproduce_results.py`) to populate uniform scenario- and specification-based folders directly under `results/`:
 
 ```text
-results/runs/<run_id>/
+results/<scenario_or_specification>/
 ├── manifest.json                       # Run status, git revision, version, validity envelope
-├── report.pdf                          # Multi-page engineering diagnostic report
 ├── config/
 │   ├── resolved_config.yaml            # Full merged configuration snapshot
 │   ├── resolved_config.origins.json    # Parameter file & line provenance
@@ -68,6 +67,6 @@ results/runs/<run_id>/
 │   └── nmpc.csv
 ├── metrics/
 │   └── comparison.json                 # Tracking RMSE, sideslip, tyre utilization, solver timings
-├── plots/                              # Generated via `torquevector render --format png`
-└── animations/                         # Generated via `torquevector render --format gif`
+├── plots/                              # Static PNGs + multi-page report.pdf
+└── animations/                         # 2D comparison.gif and road_*.gif
 ```

@@ -126,7 +126,12 @@ def run_simulation(args):
     from torquevector.cli.composition import run_configured
 
     report = False if args.no_report else (True if args.report else None)
-    return run_configured(resolve_from_args(args), results_dir=args.results_dir, report=report)
+    return run_configured(
+        resolve_from_args(args),
+        results_dir=args.results_dir,
+        report=report,
+        run_name=getattr(args, 'run_name', None),
+    )
 
 
 def locate_run(args):
@@ -170,6 +175,7 @@ def render_run(args):
     suffix = f'_{args.case}' if args.case else ''
     spec = data['spec']
     if args.format == 'gif':
+        from torquevector.cli.composition import build_vehicle
         from torquevector.visualization.animation import AnimationConfig, render_controller_comparison_gif
 
         base = viz.animation if viz else AnimationConfig(fps=8, max_frames=100, dpi=80)
@@ -177,11 +183,14 @@ def render_run(args):
             k: v for k, v in (('fps', args.fps), ('max_frames', args.max_frames), ('dpi', args.dpi)) if v is not None
         }
         name = Path(viz.animation_file_name if viz else 'comparison.gif').stem
+        car = build_vehicle(data['tree']['vehicle']) if data['tree'] is not None else None
         result = render_controller_comparison_gif(
             data['seqs'],
             run / 'animations' / f'{name}{suffix}.gif',
             title=f'{spec.kind} | SYNTHETIC / NOT VEHICLE VALIDATED',
             config=replace(base, **explicit),
+            car=car,
+            primary=args.controller,
         )
     else:
         from torquevector.visualization.comparison import ChartStyle, chart
@@ -451,11 +460,16 @@ def handling(args):
     pairs = [v.split('=', 1) for v in args.variants] if args.variants else DEFAULT_VARIANTS
     root = Path(__file__).resolve().parents[3]
     variants = {name: (Path(path) if Path(path).is_absolute() else root / path) for name, path in pairs}
-    output = unique_directory(Path(args.output).expanduser().resolve(), timestamp())
+    base_out = Path(args.output).expanduser().resolve()
+    if getattr(args, 'flat', False):
+        output = base_out
+        output.mkdir(parents=True, exist_ok=True)
+    else:
+        output = unique_directory(base_out, timestamp())
     report = handling_analysis(variants, output, controllers=args.controllers)
     figures = report.pop('_figures')
     plots = output / 'plots'
-    plots.mkdir()
+    plots.mkdir(exist_ok=True)
     speed = args.diagram_speed
     for controller in sorted({k[1].split('@')[0] for k in figures['curves']}):
         curves = {v: c for (v, key), c in figures['curves'].items() if key == f'{controller}@{speed:g}'}
@@ -704,6 +718,7 @@ def _run_options(p):
     p.add_argument('--duration', type=float, help='simulated time [s] (the manoeuvre definition is unchanged)')
     p.add_argument('--speed-ms', type=float, help='target/initial speed [m/s]')
     p.add_argument('--results-dir', help='results root (default: results/)')
+    p.add_argument('--run-name', help='exact subfolder name under results-dir (default: <timestamp>_<scenario>)')
     group = p.add_mutually_exclusive_group()
     group.add_argument('--report', action='store_true', help='always write the PDF report')
     group.add_argument('--no-report', action='store_true', help='do not write the automatic report')
@@ -819,6 +834,7 @@ def build_parser():
     )
     p.add_argument('--controllers', choices=CONTROLLERS, nargs='+', help='default: validation.handling.controllers')
     p.add_argument('--diagram-speed', type=float, default=20.0, help='speed of the handling-diagram plots [m/s]')
+    p.add_argument('--flat', action='store_true', help='write directly to --output without a timestamp subfolder')
     p.set_defaults(func=handling)
 
     p = sub.add_parser(

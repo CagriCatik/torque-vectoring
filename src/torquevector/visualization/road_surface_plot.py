@@ -179,6 +179,68 @@ def zoom_window(state, half_length_m: float = 5.5, half_width_m: float = 3.0):
     return (state.x_m - half_length_m, state.x_m + half_length_m, state.y_m - half_width_m, state.y_m + half_width_m)
 
 
+def draw_ghost_vehicle(ax, state, car: VehicleParameters, label: str = 'OFF', zorder: int = 4) -> list:
+    """Halbtransparenter Gestrichelter Karosserieumriss als Vergleichsfahrzeug in derselben Kamera."""
+    from matplotlib.patches import Polygon
+
+    ox, oy = vehicle_outline(state, car)
+    poly = Polygon(
+        list(zip(ox, oy)),
+        closed=True,
+        facecolor='#94a3b8',
+        alpha=0.22,
+        edgecolor='#475569',
+        ls='--',
+        lw=1.3,
+        zorder=zorder,
+    )
+    ax.add_patch(poly)
+    tag = ax.text(
+        state.x_m,
+        state.y_m - 1.35,
+        label,
+        fontsize=7,
+        color='#475569',
+        ha='center',
+        va='top',
+        weight='bold',
+        zorder=zorder + 1,
+    )
+    return [poly, tag]
+
+
+def draw_velocity_arrow(ax, state, length_m: float = 2.9, zorder: int = 8) -> list:
+    """Gestrichelte Fahrzeuglängsachse + cyanfarbener Geschwindigkeitsvektor (macht β sichtbar)."""
+    from math import hypot
+
+    c, s = cos(state.yaw_rad), sin(state.yaw_rad)
+    artists = list(
+        ax.plot(
+            [state.x_m, state.x_m + length_m * c],
+            [state.y_m, state.y_m + length_m * s],
+            ls=':',
+            lw=1.1,
+            color='#334155',
+            zorder=zorder,
+        )
+    )
+    vx_w = c * state.vx_ms - s * state.vy_ms
+    vy_w = s * state.vx_ms + c * state.vy_ms
+    speed = hypot(vx_w, vy_w)
+    if speed > 0.5:
+        scale = length_m / speed
+        artists.append(
+            ax.annotate(
+                '',
+                xy=(state.x_m + vx_w * scale, state.y_m + vy_w * scale),
+                xytext=(state.x_m, state.y_m),
+                zorder=zorder + 2,
+                arrowprops={'arrowstyle': '-|>', 'color': '#0284c7', 'lw': 1.8, 'mutation_scale': 10},
+            )
+        )
+    return artists
+
+
 def draw_forces(ax, sample: TorqueSample, row: dict, zorder: int = 9) -> list:
     artists = []
     for name, (fx, fy) in force_vectors(sample).items():

@@ -26,7 +26,9 @@ from torquevector.visualization.road_surface_plot import (
     WHEEL_COLORS,
     draw_forces,
     draw_friction_map,
+    draw_ghost_vehicle,
     draw_vehicle,
+    draw_velocity_arrow,
     map_extent,
     vehicle_outline,
     zoom_window,
@@ -73,12 +75,12 @@ def render_road_gif(
         3,
         3,
         height_ratios=(strip + 0.5, 3.4, 2.6),
-        hspace=0.5,
+        hspace=0.50,
         wspace=0.28,
         left=0.06,
         right=0.97,
         top=0.93,
-        bottom=0.07,
+        bottom=0.095,
     )
     ax_map = fig.add_subplot(grid[0, :])
     ax_cam, ax_yaw, ax_beta = (fig.add_subplot(grid[1, i]) for i in range(3))
@@ -117,6 +119,14 @@ def render_road_gif(
                 alpha=0.5,
                 color=CONTROLLER_COLORS.get(kind, 'k'),
                 label=kind.upper(),
+            )
+            ax_cam.plot(
+                [s.state.x_m for s in other],
+                [s.state.y_m for s in other],
+                lw=0.9,
+                alpha=0.45,
+                ls='--',
+                color=CONTROLLER_COLORS.get(kind, 'k'),
             )
     (path_line,) = ax_map.plot([], [], color=CONTROLLER_COLORS.get(primary, 'k'), lw=2, label=primary.upper())
     (body,) = ax_map.plot([], [], color='k', lw=1.2)
@@ -175,10 +185,22 @@ def render_road_gif(
         body.set_data(*vehicle_outline(sample.state, car))
         for artist in dynamic:
             artist.remove()
-        dynamic[:] = draw_vehicle(
-            ax_cam, sample.state, car, sample.steer_actual_deg or 0.0, {w: row[w]['road_mu'] for w in WHEEL_ORDER}
-        ) + draw_forces(ax_cam, sample, row)
         window = zoom_window(sample.state)
+        dynamic[:] = []
+        if 'off' in seqs and primary != 'off':
+            off_s = seqs['off'][min(i, len(seqs['off']) - 1)]
+            if (
+                window[0] - 4.0 <= off_s.state.x_m <= window[1] + 4.0
+                and window[2] - 4.0 <= off_s.state.y_m <= window[3] + 4.0
+            ):
+                dynamic.extend(draw_ghost_vehicle(ax_cam, off_s.state, car))
+        dynamic.extend(
+            draw_vehicle(
+                ax_cam, sample.state, car, sample.steer_actual_deg or 0.0, {w: row[w]['road_mu'] for w in WHEEL_ORDER}
+            )
+        )
+        dynamic.extend(draw_forces(ax_cam, sample, row))
+        dynamic.extend(draw_velocity_arrow(ax_cam, sample.state, zorder=8))
         ax_cam.set_xlim(*window[:2])
         ax_cam.set_ylim(*window[2:])
         mu_text.set_text('  '.join(f"{w} µ={row[w]['road_mu']:.2f}" for w in WHEEL_ORDER))

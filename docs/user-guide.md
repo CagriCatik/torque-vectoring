@@ -10,8 +10,12 @@ Both `torquevector` and `tvsim` invoke the unified command-line interface define
 # Simulate a single controller on a chosen scenario
 torquevector simulate --scenario circle_track --controller lqr
 
-# Compare all five controllers on the Double Lane Change
-torquevector compare --scenario double_lane_change --controllers off p lqr ltv nmpc
+# Compare all five controllers on the Double Lane Change into a named scenario folder
+torquevector compare --scenario double_lane_change --controllers off p lqr ltv nmpc \
+    --results-dir results --run-name double_lane_change --report
+
+# Reproduce all canonical scenario folders, ISO 4138 handling analysis, tyre curves, and assets/
+python scripts/reproduce_results.py
 
 # Execute the 4-manoeuvre nominal benchmark matrix (circle, DLC, step steer, sine steer)
 torquevector simulate --profile configs/profiles/nominal.yaml
@@ -46,7 +50,7 @@ torquevector compare --scenario mixed_mu_lane_change \
 Computes analytical linear single-track properties ($K$, $v_{\text{char}}$, $v_{\text{crit}}$), quasi-steady ISO 4138 ramp-steer handling diagrams, $(\beta, r)$ phase-plane stability portraits, and combined-slip $g$-$g$ acceleration envelopes across the `reference`, `understeer`, and `oversteer` vehicle variants:
 
 ```bash
-torquevector handling --output results/handling
+torquevector handling --output results/handling_iso4138 --flat
 ```
 
 ---
