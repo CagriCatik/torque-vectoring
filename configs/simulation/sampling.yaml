@@ -1,0 +1,14 @@
+# Getaktete Regelung mit Zero-Order-Hold (einzige Online-Architektur).
+schema_version: 1
+
+sampling:
+  id: zoh_40ms
+  description: Gemeinsame Regelperiode für OFF/P/LQR/LTV/NMPC; Telemetrie je Takt
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: NMPCConfig.sample_s / LTVConfig.sample_s (V11, 40 ms)
+    notes: Prädiktive Regler verlangen sample_s == control_period_s (Konsistenzprüfung).
+  control_period_s: 0.04
+  hold: zero_order_hold
+  telemetry_alignment: start_of_hold_interval

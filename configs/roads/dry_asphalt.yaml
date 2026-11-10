@@ -1,0 +1,23 @@
+# Gleichförmig trockener Asphalt. reference_mu = default mu => Reifenreibwert bleibt exakt unverändert
+# (neutrale Fahrbahn, reproduziert das bisherige Modell bitidentisch). Synthetischer Beispielwert.
+schema_version: 1
+
+road:
+  id: dry_asphalt
+  description: Gleichförmige trockene Fahrbahn (Referenz der Reifenparameter)
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: synthetic example value of the torquevector 12.1 road-friction set (mu 0.90)
+    notes: Keine gemessene Fahrbahn.
+  coordinate_system: {x_axis: forward, y_axis: left, units: meters}
+  default_surface:
+    material: dry_asphalt
+    mu: 0.90
+  regions: []
+  transition:
+    mode: sharp
+    smoothing_distance_m: 0.0
+  friction_model:
+    mode: scale_tyre_mu      # mu_Reifen,eff = mu_Reifen * mu_Fahrbahn / reference_mu
+    reference_mu: 0.90       # Fahrbahn, auf der die Reifenparameter gelten (synthetische Annahme: trocken)

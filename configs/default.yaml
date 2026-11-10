@@ -1,0 +1,44 @@
+# Zentrale Anwendungskonfiguration (Composition Root). Alle Modell-, Regler-, Solver-,
+# Manöver- und Darstellungsparameter stammen aus den referenzierten Dateien; der Code enthält
+# für diesen Pfad keine versteckten Fallbacks. Pfade relativ zu dieser Datei.
+#
+#   tvsim simulate --config configs/default.yaml
+#   tvsim config show --config configs/default.yaml --origins
+schema_version: 1
+
+application:
+  id: v11_reference
+  description: V11-Referenzkonfiguration; reproduziert die eingefrorene Strukturregression exakt
+  includes:
+    vehicle: vehicles/generic_passenger_car.yaml
+    tyre: tyres/pacejka_fitted_synthetic.yaml
+    wheel: wheels/standard_wheel.yaml
+    powertrain: powertrain/four_wheel_independent.yaml
+    road: roads/dry_asphalt.yaml            # neutrale Fahrbahn; Szenarien können eigene Fahrbahn setzen
+    controllers:
+      p: controllers/p.yaml
+      lqr: controllers/lqr.yaml
+      ltv_mpc: controllers/ltv_mpc.yaml
+      nmpc: controllers/nmpc.yaml
+    allocation: allocation/torque_allocator.yaml
+    simulation:
+      integrator: simulation/integrator.yaml
+      sampling: simulation/sampling.yaml
+      limits: simulation/limits.yaml
+      driver: simulation/driver.yaml
+    scenario: scenarios/circle_track.yaml
+    visualization:
+      live_plots: visualization/live_plots.yaml
+      static_plots: visualization/static_plots.yaml
+      gif_export: visualization/gif_export.yaml
+    validation:
+      quality_gates: validation/quality_gates.yaml
+      thresholds: validation/thresholds.yaml
+      scenario_matrix: validation/scenario_matrix.yaml
+  run:
+    controllers: [off, p, lqr, ltv, nmpc]
+    matrix_set: null
+    results_dir: results/runs        # simulate/compare; collections (multi-mu, q11, …) use their own folders
+    telemetry:
+      format: json_lossless
+      store_controller_diagnostics: true

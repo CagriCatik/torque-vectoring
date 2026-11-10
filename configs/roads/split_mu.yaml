@@ -1,0 +1,28 @@
+# Split-mu ab x = 20 m: links (y >= 0) nass, rechts (y < 0) trocken. Davor trocken.
+schema_version: 1
+
+road:
+  id: split_mu
+  description: Trockener Anlauf, ab 20 m links nass / rechts trocken
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: synthetische Beispielwerte (trocken 0.90, nass 0.40)
+    notes: null
+  coordinate_system: {x_axis: forward, y_axis: left, units: meters}
+  default_surface:
+    material: dry_asphalt
+    mu: 0.90
+  regions:
+    - id: split_section
+      type: split_mu
+      bounds: {x_min_m: 20.0, x_max_m: null, y_min_m: null, y_max_m: null}
+      split_y_m: 0.0
+      left: {material: wet_asphalt, mu: 0.40}
+      right: {material: dry_asphalt, mu: 0.90}
+  transition:
+    mode: sharp
+    smoothing_distance_m: 0.0
+  friction_model:
+    mode: scale_tyre_mu
+    reference_mu: 0.90

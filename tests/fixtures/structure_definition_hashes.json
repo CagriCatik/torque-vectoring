@@ -1,0 +1,266 @@
+[
+  {
+    "source": "tireviz/dynamics.py",
+    "symbol": "VehicleParameters",
+    "module": "torquevector.domain.vehicle",
+    "sha256_ast": "e2f07a0e6525351e7446f7ce57fbe09a3c7686df53082932b2ec3816dc25f948"
+  },
+  {
+    "source": "tireviz/dynamics.py",
+    "symbol": "DriverControls",
+    "module": "torquevector.domain.controls",
+    "sha256_ast": "61a1d42f7a3caade52935e307228500fb94a32a59322ecafcf2715ced28ff665"
+  },
+  {
+    "source": "tireviz/dynamics.py",
+    "symbol": "VehicleState",
+    "module": "torquevector.domain.states",
+    "sha256_ast": "92fa9ced8ed5b065ec92d5bd1b84855c148e08b45cd8dfd3b3cc5481c9fa7752"
+  },
+  {
+    "source": "tireviz/dynamics.py",
+    "symbol": "VehicleForces",
+    "module": "torquevector.domain.states",
+    "sha256_ast": "877a7d0060829cf6c44cbc8b8940ed165b0d0b1e9d663505f029c6f14525ac7d"
+  },
+  {
+    "source": "tireviz/dynamics.py",
+    "symbol": "wheel_loads",
+    "module": "torquevector.physics.load_transfer",
+    "sha256_ast": "db64e32009c971291a8b5266b72ebed4ab650a5cc4d325d3b813581822d75417"
+  },
+  {
+    "source": "tireviz/dynamics.py",
+    "symbol": "rotate_wheel_to_body",
+    "module": "torquevector.physics.four_wheel",
+    "sha256_ast": "7bc56bf64cfccd8b85302909e23b19fc0239473f7ebdc86cbb958eeeea92552c"
+  },
+  {
+    "source": "tireviz/dynamics.py",
+    "symbol": "evaluate",
+    "module": "torquevector.physics.four_wheel",
+    "sha256_ast": "c721287ae1f266e3f4d0ca72c3466881a3c254044bb56449cdad05a4e970638d"
+  },
+  {
+    "source": "tireviz/dynamics.py",
+    "symbol": "advance",
+    "module": "torquevector.physics.four_wheel",
+    "sha256_ast": "789db608f3ab5c280c5e24f9e7b19eb236b0858f3fea5a0058e321c94494671a"
+  },
+  {
+    "source": "tireviz/torque_model.py",
+    "symbol": "WheelParameters",
+    "module": "torquevector.domain.wheels",
+    "sha256_ast": "b78bc1bff0517adb72758bc1a3e1dd63e6728f6c030e1451c01a5f95769144f1"
+  },
+  {
+    "source": "tireviz/torque_model.py",
+    "symbol": "TorqueControls",
+    "module": "torquevector.domain.controls",
+    "sha256_ast": "beb304a0d3e13b9def4a48183ae9ff4267c8a91733f7aa302ec0a8f517511b95"
+  },
+  {
+    "source": "tireviz/torque_model.py",
+    "symbol": "TorqueSample",
+    "module": "torquevector.domain.telemetry",
+    "sha256_ast": "21d2eaa0498c27750a9530e2389ff194d85c71eb137c6062d40fa103af684a44"
+  },
+  {
+    "source": "tireviz/torque_model.py",
+    "symbol": "steering",
+    "module": "torquevector.physics.wheel_rotation",
+    "sha256_ast": "26703ce0176d94e0bb9e97df28a455d2af53d8d2f439691e4290534275b3571c"
+  },
+  {
+    "source": "tireviz/torque_model.py",
+    "symbol": "wheel_longitudinal_velocities",
+    "module": "torquevector.physics.wheel_rotation",
+    "sha256_ast": "4344951fc99e1a2671db67cd7688af25693693848e99fd614400cb1d6dc5565d"
+  },
+  {
+    "source": "tireviz/torque_model.py",
+    "symbol": "wheel_slips",
+    "module": "torquevector.physics.wheel_rotation",
+    "sha256_ast": "305e4d1ce2fca6d91e6076dd90c1cd849e60bc10d5cba78e52aa586174fef55a"
+  },
+  {
+    "source": "tireviz/torque_model.py",
+    "symbol": "validate_no_lift",
+    "module": "torquevector.physics.wheel_rotation",
+    "sha256_ast": "c39b449a7a8073592fc0da08acc1bb8af72beaf6151c1695ff365a7fb8abe0b3"
+  },
+  {
+    "source": "tireviz/torque_model.py",
+    "symbol": "forces_at",
+    "module": "torquevector.physics.wheel_rotation",
+    "sha256_ast": "c9ff35ae1a4d74b0b6fb8eef14cf94c273ac7719fb63d8a363d0da89d65ec1bc"
+  },
+  {
+    "source": "tireviz/torque_model.py",
+    "symbol": "derivative",
+    "module": "torquevector.physics.wheel_rotation",
+    "sha256_ast": "27c595389042fdadcab7094dcdee82b8428cf7996a4290204a875bfdbe67725e"
+  },
+  {
+    "source": "tireviz/torque_model.py",
+    "symbol": "simulate_torque",
+    "module": "torquevector.simulation.continuous",
+    "sha256_ast": "2abd89e5c40de1598d8c8b6f9bdcd591ea2cd346e658bb13046bfeea3ccfd970"
+  },
+  {
+    "source": "tireviz/tyre.py",
+    "symbol": "MagicFormulaAxis",
+    "module": "torquevector.domain.tyre",
+    "sha256_ast": "31d7a018d5d3499e8d146b99c09a8f196cb0b568192e1118abccd92525a49e9b"
+  },
+  {
+    "source": "tireviz/tyre.py",
+    "symbol": "TyreParameters",
+    "module": "torquevector.domain.tyre",
+    "sha256_ast": "fc670f4a9a79d74c01f41b61c1456845c1a61c6056b6341fb8e518d923fffd52"
+  },
+  {
+    "source": "tireviz/tyre.py",
+    "symbol": "TyreResult",
+    "module": "torquevector.domain.tyre",
+    "sha256_ast": "eac55b91d2fb8d4cbd4ec178cfdc3dbdf5f388e8c79572b3251738dbfe69105a"
+  },
+  {
+    "source": "tireviz/tyre.py",
+    "symbol": "magic_formula",
+    "module": "torquevector.physics.tyre_magic_formula",
+    "sha256_ast": "9b7391741445488bdf12d4ec7d1140d19ff1ce8f9b1c5dceda99f9e68ccd1431"
+  },
+  {
+    "source": "tireviz/tyre.py",
+    "symbol": "peak_grip",
+    "module": "torquevector.physics.tyre_magic_formula",
+    "sha256_ast": "ec0de60d50bb7563c013c67b91d4ac224c6b1ff9d395f8cc0eba12caa26c4959"
+  },
+  {
+    "source": "tireviz/tyre.py",
+    "symbol": "tyre_forces",
+    "module": "torquevector.physics.tyre_magic_formula",
+    "sha256_ast": "32aaa2facdc2c62a49448cf9048d7c77947c63ac8ec6653c0beddc8ddd4b0aa4"
+  },
+  {
+    "source": "tireviz/combined_slip.py",
+    "symbol": "CombinedSlipShape",
+    "module": "torquevector.physics.combined_slip",
+    "sha256_ast": "cd04b858ceccae0eafe5ff49ca4275cd22b5c30070b0c9710f5d2b630a378064"
+  },
+  {
+    "source": "tireviz/combined_slip.py",
+    "symbol": "CombinedSlipTyre",
+    "module": "torquevector.physics.combined_slip",
+    "sha256_ast": "d9dc86a965b9796a4087e34d48dd886bfd483889ab3f0f0011adf2f45604c927"
+  },
+  {
+    "source": "tireviz/actuators.py",
+    "symbol": "SteeringActuator",
+    "module": "torquevector.physics.steering",
+    "sha256_ast": "a2313995218a6214ef9a1e1dcadd713db9040f0f851f0d920ad4b67125ac3feb"
+  },
+  {
+    "source": "tireviz/torque_allocator.py",
+    "symbol": "AllocationOptions",
+    "module": "torquevector.control.allocation",
+    "sha256_ast": "c59f3ae71a1997265ed65b26b56e78c9fa7e5c5fb7db5a63f94c6f61f1f88a07"
+  },
+  {
+    "source": "tireviz/torque_allocator.py",
+    "symbol": "AllocationResult",
+    "module": "torquevector.control.allocation",
+    "sha256_ast": "f649d9da5379e94a26391e17f621d1079084b0317cb460d4e0222ef817321de9"
+  },
+  {
+    "source": "tireviz/torque_allocator.py",
+    "symbol": "allocate_yaw",
+    "module": "torquevector.control.allocation",
+    "sha256_ast": "304375e1f63dfa4e22d54300beb4b94a7d76a4c2635d6ed2a0a321b29baca61f"
+  },
+  {
+    "source": "tireviz/ltv_mpc.py",
+    "symbol": "LTVConfig",
+    "module": "torquevector.control.controllers.ltv_mpc",
+    "sha256_ast": "9bcb0eed55e87c34324e65aa91d338c4dd51ec6c5e4a0bcb9f6f7f36d9292378"
+  },
+  {
+    "source": "tireviz/ltv_mpc.py",
+    "symbol": "LTVMPC",
+    "module": "torquevector.control.controllers.ltv_mpc",
+    "sha256_ast": "f3fbf53db6b600bfedf28d39c2f8eb68577d6d6cf3636c6926ba5dcc6287f873"
+  },
+  {
+    "source": "tireviz/nmpc_plant.py",
+    "symbol": "ReducedOrderTyre",
+    "module": "torquevector.prediction.nonlinear_bicycle",
+    "sha256_ast": "541240f3492357171676dbe933133552b7b0059fa2451048609b6768752eb815"
+  },
+  {
+    "source": "tireviz/nmpc_plant.py",
+    "symbol": "bicycle_derivative",
+    "module": "torquevector.prediction.nonlinear_bicycle",
+    "sha256_ast": "423e3658ab0d035dbb02db335f56b6264eb87c8175bd46f28d9ad8042bc09d21"
+  },
+  {
+    "source": "tireviz/nmpc_plant.py",
+    "symbol": "rk4_step",
+    "module": "torquevector.prediction.nonlinear_bicycle",
+    "sha256_ast": "f71811469c2de66afa731b7025c0909852fe6f771da85ac3977b5f899be11b20"
+  },
+  {
+    "source": "tireviz/pso.py",
+    "symbol": "PSOSettings",
+    "module": "torquevector.optimization.pso",
+    "sha256_ast": "c686da0b37da588fa6e1de441e52887a28ee54c98be335595fd33fd8c33e321c"
+  },
+  {
+    "source": "tireviz/pso.py",
+    "symbol": "PSOResult",
+    "module": "torquevector.optimization.pso",
+    "sha256_ast": "11d0f1a65aac33a2608f2120ce5a96ba6ff7fe4a78eba983e6e42b6a0d88f953"
+  },
+  {
+    "source": "tireviz/pso.py",
+    "symbol": "minimize_swarm",
+    "module": "torquevector.optimization.pso",
+    "sha256_ast": "1f02f747ef79594cad27b40bbafbb2e4b5d4b0cd6aa90a727cf88775c397cee8"
+  },
+  {
+    "source": "tireviz/yaw_strategies.py",
+    "symbol": "ProportionalYaw",
+    "module": "torquevector.control.controllers.p",
+    "sha256_ast": "90564e18ca37ded3fdc51a32953f9574bcf2aa11c62820d673f4c9e0d09ba4cb"
+  },
+  {
+    "source": "tireviz/yaw_strategies.py",
+    "symbol": "LQRConfig",
+    "module": "torquevector.control.controllers.lqr",
+    "sha256_ast": "06157e5189d32ebc7233c8afa8c1942b7edb4db565ed4837038dcae9e9d19584"
+  },
+  {
+    "source": "tireviz/yaw_strategies.py",
+    "symbol": "_axle_cornering_stiffness",
+    "module": "torquevector.prediction.bicycle_linear",
+    "sha256_ast": "263630f7873f60aa8b5d8e08d6db0b75d25e786256c5cc45841fb132d3ab0873"
+  },
+  {
+    "source": "tireviz/yaw_strategies.py",
+    "symbol": "bicycle_lateral_matrices",
+    "module": "torquevector.prediction.bicycle_linear",
+    "sha256_ast": "c8c84a513d0e5a7eea755813d3e465e7a6741b6adb78d110ad3dfa8652985037"
+  },
+  {
+    "source": "tireviz/yaw_strategies.py",
+    "symbol": "_lqr_gain",
+    "module": "torquevector.control.controllers.lqr",
+    "sha256_ast": "cbdbdae5ee2030cf628941734b90438528bd8da2504a07797c048e9f69117969"
+  },
+  {
+    "source": "tireviz/yaw_strategies.py",
+    "symbol": "LQRYawSideslip",
+    "module": "torquevector.control.controllers.lqr",
+    "sha256_ast": "651e3003fb23145ba9348596f48484365c24bab052e08bd7b2597e57539dbdb3"
+  }
+]

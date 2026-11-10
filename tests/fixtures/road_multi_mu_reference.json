@@ -1,0 +1,77 @@
+[
+  {
+    "scenario": "straight_multi_mu",
+    "controller": "off",
+    "status": "PASS",
+    "metrics": {
+      "yaw_rmse_rads": 8.559454391271651e-05,
+      "cross_rmse_m": 5.0538520630032165e-05,
+      "max_abs_beta_deg": 0.0023499735328285686,
+      "max_tyre_utilization": 0.0550778747125251,
+      "final_speed_ms": 15.000029023480122,
+      "max_abs_slip": 0.005538138271798856
+    },
+    "final_x_m": 119.99605253466022,
+    "final_y_m": -3.981576286228577e-05
+  },
+  {
+    "scenario": "straight_multi_mu",
+    "controller": "lqr",
+    "status": "PASS",
+    "metrics": {
+      "yaw_rmse_rads": 3.4977601283559585e-05,
+      "cross_rmse_m": 1.847555779397118e-05,
+      "max_abs_beta_deg": 0.0009738319351062369,
+      "max_tyre_utilization": 0.05541451830384526,
+      "final_speed_ms": 15.000029113995485,
+      "max_abs_slip": 0.005572030326865469
+    },
+    "final_x_m": 119.99605243704325,
+    "final_y_m": -1.9637025077581667e-06
+  },
+  {
+    "scenario": "straight_split_mu_braking",
+    "controller": "off",
+    "status": "PASS",
+    "metrics": {
+      "yaw_rmse_rads": 0.0017726557324705121,
+      "cross_rmse_m": 0.0012970586176933962,
+      "max_abs_beta_deg": 0.052165009459672826,
+      "max_tyre_utilization": 0.7738789355690779,
+      "final_speed_ms": 5.950875192061557,
+      "max_abs_slip": 0.10287391423284747
+    },
+    "final_x_m": 55.42386861914837,
+    "final_y_m": 0.0003661129688395282
+  },
+  {
+    "scenario": "straight_split_mu_acceleration",
+    "controller": "off",
+    "status": "PASS",
+    "metrics": {
+      "yaw_rmse_rads": 0.0012658029803141952,
+      "cross_rmse_m": 0.0014603184173513396,
+      "max_abs_beta_deg": 0.02916071446309108,
+      "max_tyre_utilization": 0.799386347160033,
+      "final_speed_ms": 18.910300397642064,
+      "max_abs_slip": 0.10933359027259835
+    },
+    "final_x_m": 53.04569626089759,
+    "final_y_m": 0.0004914992237164652
+  },
+  {
+    "scenario": "mixed_mu_lane_change",
+    "controller": "lqr",
+    "status": "PASS",
+    "metrics": {
+      "yaw_rmse_rads": 0.1113843652649479,
+      "cross_rmse_m": 0.2598379254837491,
+      "max_abs_beta_deg": 4.800262785556973,
+      "max_tyre_utilization": 0.6925456841563973,
+      "final_speed_ms": 18.01905949826584,
+      "max_abs_slip": 0.03834276158725504
+    },
+    "final_x_m": 157.3785973567623,
+    "final_y_m": -0.05042295933191734
+  }
+]

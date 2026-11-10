@@ -1,0 +1,25 @@
+# Offline-PSO-Einstellungen (optimization.pso.PSOSettings). NIE in der Regelschleife.
+# Erweitertes Budget (6 Partikel x 4 Iterationen = 24 Kandidaten) für die Q11-Nachabstimmung von LTV/NMPC.
+# Weiterhin kein globaler Optimalitätsnachweis.
+schema_version: 1
+
+pso:
+  id: pso_extended
+  description: Global-Best-PSO im normierten Suchraum, deterministisch über seed
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: configs/optimizations/nmpc_pso.json (particles/iterations/seed), PSOSettings (Koeffizienten)
+    notes: null
+  algorithm: global_best_pso_normalized_box
+  particles: 6
+  iterations: 4
+  seed: 42
+  cognitive: 1.5
+  social: 1.5
+  inertia_start: 0.75
+  inertia_end: 0.4
+  velocity_clamp: 0.3
+  boundary_handling: clip_and_zero_velocity
+  parallel_workers: 1
+  default_study: nmpc_tuning_extended.yaml

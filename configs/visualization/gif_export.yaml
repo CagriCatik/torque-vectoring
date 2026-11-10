@@ -1,0 +1,21 @@
+# GIF-Export aus gespeicherter Telemetrie, ohne erneute Simulation (visualization.animation).
+# Werte = bisherige Defaults von 'tvsim render' (fps 8, max_frames 100, dpi 80).
+# Historische GIF-CLIs (tvsim legacy render_gif_v10/v11) behalten ihre eigenen Optionen.
+schema_version: 1
+
+gif_export:
+  id: controller_comparison_gif
+  description: 2x2-Animation Trajektorie, Gierrate, Schwimmwinkel, Allokation/Reifenausnutzung
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: torquevector.cli.main render (argparse-Defaults V11), AnimationConfig
+    notes: max_frames dünnt aus; das Manöver wird nie gekürzt.
+  fps: 8
+  max_frames: 100
+  tail_s: 1.0
+  dpi: 80
+  figure_size_in: [11.5, 8.0]
+  colors: null
+  file_name: comparison.gif
+  panels: [trajectory, yaw_rate, sideslip, torque_allocation_and_utilization]

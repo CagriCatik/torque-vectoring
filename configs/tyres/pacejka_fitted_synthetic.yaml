@@ -1,0 +1,61 @@
+# Magic-Formula-B/C/E-Surrogat, kalibriert auf einen SYNTHETISCHEN Brush-/tanh-Datensatz.
+# Dies ist der Reifen des kanonischen Simulationspfads (bisher load_model() aus
+# src/torquevector/resources/synthetic/fit_report.json). Floats verlustfrei (repr) übernommen.
+# KEINE realen Reifenmessdaten. Keine Umrechnung in MF5.2/MF6.x-Koeffizienten.
+schema_version: 1
+
+tyre:
+  id: pacejka_fitted_synthetic
+  description: Reines MF-B/C/E-Modell plus elliptische Opposing-Slip-Dämpfung (Nicht-MF-Kopplung)
+  provenance:
+    source_type: synthetic_calibrated
+    experimentally_validated: false
+    origin: data/synthetic/fit_report.json (identisch mit Paketressource synthetic/fit_report.json)
+    notes: >-
+      Kalibrierung auf synthetische Daten des Generators torquevector.calibration.synthetic_generation;
+      Referenzlast im Fit fest 4000 N (calibration.surrogate.predict). Q10 BLOCKED_NO_REAL_MEASUREMENTS.
+    calibration:
+      dataset_kind: synthetic_independent_surrogate
+      dataset_id: synthetic_brush_measurements (seed 20261025)
+      dataset_files: [data/synthetic/synthetic_brush_measurements.csv, data/synthetic/metadata.json]
+      truth_model: brush-inspired tanh force surrogate (NOT Magic Formula)
+      fit_model_version: pure MF B/C/E plus non-MF smooth opposing-slip damping
+      fit_method: TRF soft_l1 multi-start, restarts 3, seed 903
+      holdout_joint_nrmse: 0.034082700362412593
+      stress_joint_nrmse: 0.06289930429022736
+      validity_domain:
+        kappa: [-0.28, 0.28]
+        alpha_rad: [-0.25, 0.25]
+        fz_n: [2500, 5600]
+        note: Daten- nicht Modellgrenzen; Temperatur/Druck/Geschwindigkeit sind nicht modelliert
+
+  model: magic_formula_bce
+
+  friction:
+    mu: 1.0049454296189615
+    reference_load_n: 4000.0
+    load_sensitivity_exponent: -0.07155738497857973
+
+  longitudinal:
+    B: 6.072859506275652
+    C: 1.6393309486032712
+    E: 0.3852757656227038
+
+  lateral:
+    B: 3.682458107119364
+    C: 1.9548567452761896
+    E: 0.2959144450178403
+
+  combined_slip:
+    model: elliptic_damping_surrogate
+    alpha_scale_rad: 0.23572224878419124
+    kappa_scale: 0.13953873041633566
+    lateral_peak_fraction: 1.0        # im Fit nicht frei, CombinedSlipShape-Wert
+    longitudinal_peak_fraction: 1.0   # im Fit nicht frei, CombinedSlipShape-Wert
+
+  axle_scaling:                    # Eigenlenkverhalten je Achse (physics.axle_tyre); 1.0 = unskaliert, bitgleich
+    front: {lateral_stiffness_scale: 1.0, friction_scale: 1.0}
+    rear: {lateral_stiffness_scale: 1.0, friction_scale: 1.0}
+
+  operating_limits:
+    max_abs_longitudinal_slip: 0.5

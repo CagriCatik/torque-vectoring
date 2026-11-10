@@ -1,0 +1,39 @@
+# VORLAGE für weitere Reifen. Nicht als Laufzeitkonfiguration zulässig (template: true).
+# Nur Koeffizienten der implementierten B/C/E-Form eintragen; Koeffizienten anderer
+# Magic-Formula-Varianten (MF5.2, MF6.x) NICHT stillschweigend umrechnen.
+schema_version: 1
+template: true
+
+tyre:
+  id: null
+  description: null
+  provenance:
+    source_type: null              # synthetic | synthetic_calibrated | literature | measured
+    experimentally_validated: false
+    origin: null                   # Datensatz-ID, Prüfstand, Bericht
+    notes: null
+    calibration: null              # Datensatz-ID, Modellversion, Gültigkeitsbereich, Fit-Metriken
+  model: magic_formula_bce
+  friction:
+    mu: null                       # [1] 0.05..2
+    reference_load_n: null         # [N] > 0
+    load_sensitivity_exponent: null  # [1] -0.3..0
+  longitudinal:
+    B: null                        # [1] 0 < B <= 200
+    C: null                        # [1] 0 < C <= 3
+    E: null                        # [1] -5 <= E <= 1
+  lateral:
+    B: null
+    C: null
+    E: null
+  combined_slip:
+    model: null                    # kamm_circle | elliptic_damping_surrogate
+    alpha_scale_rad: null          # nur Surrogat
+    kappa_scale: null
+    lateral_peak_fraction: null
+    longitudinal_peak_fraction: null
+  axle_scaling:
+    front: {lateral_stiffness_scale: null, friction_scale: null}   # [1] 0.3..3, 1.0 = neutral
+    rear: {lateral_stiffness_scale: null, friction_scale: null}
+  operating_limits:
+    max_abs_longitudinal_slip: null  # [1] 0 < Wert <= 1

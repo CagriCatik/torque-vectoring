@@ -1,0 +1,12 @@
+# Reibwertwissen Modus B: LTV-MPC und NMPC erhalten den Kartenreibwert entlang der aus dem aktuellen
+# Zustand vorhergesagten Trajektorie. Die simulierte Fahrbahn bleibt identisch.
+schema_version: 1
+
+profile:
+  id: friction_preview
+  description: Known Friction Preview für prädiktive Regler (Kartenwissen, keine zukünftigen Simulationszustände)
+  base: ../default.yaml
+  overrides:
+    controllers.ltv_mpc.friction_knowledge.mode: map_preview
+    controllers.nmpc.friction_knowledge.mode: map_preview
+    allocation.friction_limit.mu_source: road_map

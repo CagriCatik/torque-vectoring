@@ -1,0 +1,29 @@
+# Linearisierte, beschränkte Giermoment-Allokation (control.allocation.AllocationOptions).
+schema_version: 1
+
+allocation:
+  id: bounded_lsq_allocator
+  description: Giermomentfolge + Summenmomenterhalt + Regularisierung, Fx ~ T/R lokal
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: torquevector.control.allocation.AllocationOptions (V11-Defaults, AST-eingefroren)
+    notes: Realisiertes Moment bestimmt die nichtlineare Vier-Rad-Simulation.
+  method: bounded_linear_least_squares
+  weights:
+    yaw_weight: 1.0
+    total_weight: 2.0
+    intervention_penalty: 0.45
+  max_delta_nm: 130.0
+  friction_limit:                 # Q11.2: Momentgrenze je Rad aus Kraftschluss
+    mode: friction_aware          # seit V12.1 (Q11.2); off = eingefrorener allocate_yaw
+    reserve_fraction: 0.8         # Engineering-Annahme: 20 % Seitenkraftreserve
+    mu_source: tyre               # Fahrbahn unbekannt; road_map nur mit Kartenwissen (Profil friction_preview)
+    mu: null
+  legacy_four_wheel_controller:   # nur historischer FourWheelYawController ('legacy')
+    mu_reference: 0.95
+    yaw_kp_nm_per_rads: 2300.0
+  solver:
+    method: bvls
+    tolerance: 1.0e-10
+    max_iterations: 100

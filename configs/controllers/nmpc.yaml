@@ -1,0 +1,52 @@
+# Reduced-Order-NMPC (control.controllers.nmpc.NMPCConfig) mit CasADi/IPOPT.
+# Werte = NMPCConfig-Defaults (identisch mit configs/controllers/nmpc.json); IPOPT-Optionen =
+# bisher fest verdrahtete Werte (print_level 0, sb yes, acceptable_tol = max(1e-4, 10*tol)).
+schema_version: 1
+
+controller:
+  type: nmpc
+  id: nmpc_reduced_order
+  description: Nichtlineares Einspurmodell mit tanh-Achssättigung, RK4, kein Vier-Rad-NMPC
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: torquevector.control.controllers.nmpc.NMPCConfig und bisheriger IPOPT-Optionssatz
+    notes: Vollständiger NMPC-PSO-/Hold-out-Lauf noch nicht abgeschlossen.
+  sample_s: 0.04
+  horizon_steps: 10
+  weights:
+    beta_scale_rad: 0.06
+    yaw_scale_rads: 0.07
+    moment_scale_nm: 1100.0
+    input_weight: 0.12
+    slew_weight: 0.06
+    terminal_weight: 1.0
+    state_soft_weight: 50.0
+  limits:
+    moment_limit_nm: 900.0
+    moment_slew_nm_s: 6000.0
+    beta_limit_rad: 0.17
+    yaw_limit_fraction: 0.9
+    mu_reference: 0.9
+  friction_knowledge:
+    mode: unknown        # map_preview: Kartenreibwert entlang der vorhergesagten Trajektorie
+  model_validity:
+    min_speed_ms: 5.0
+    max_speed_ms: 40.0
+  prediction_model:
+    predictor: reduced_order_bicycle
+    integrator: rk4
+    integration_step: equal_to_sample
+    tyre_model: tanh_axle_saturation
+  solver:
+    backend: casadi_ipopt
+    max_iterations: 35
+    tolerance: 1.0e-5
+    acceptable_tolerance_floor: 1.0e-4
+    acceptable_tolerance_factor: 10.0
+    print_level: 0
+    print_time: false
+    suppress_banner: true
+    max_cpu_time_s: null      # kein Rechenbudget gesetzt (bisheriges Verhalten)
+    warm_start: shifted_previous_solution
+    failure_policy: fail_closed

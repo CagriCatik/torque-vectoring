@@ -1,0 +1,17 @@
+# Rad des V11-Vier-Rad-Modells (torquevector.domain.wheels.WheelParameters-Defaults).
+# Die Längsschlupfgrenze gehört zum kalibrierten Reifenbereich und steht in der Reifen-YAML.
+schema_version: 1
+
+wheel:
+  id: standard_wheel
+  description: Effektiver Rollradius und Rotationsträgheit je Rad (alle vier Räder gleich)
+  provenance:
+    source_type: synthetic
+    experimentally_validated: false
+    origin: torquevector.domain.wheels.WheelParameters (V11-Defaults, AST-eingefroren)
+    notes: null
+
+  effective_radius_m: 0.315
+  rotational_inertia_kgm2: 1.45
+  min_contact_speed_ms: 3.0     # Vorwärtsmodell; darunter OutsideEnvelopeError statt Extrapolation
+  initial_condition: free_rolling  # omega0 = v0 / R

@@ -1,0 +1,164 @@
+[
+  {
+    "scenario": "circle_track",
+    "controller": "off",
+    "duration_s": 8.0,
+    "metrics": {
+      "yaw_rmse_rads": 0.04315874895457563,
+      "cross_rmse_m": 0.2744589952755608,
+      "max_abs_beta_deg": 1.8074809820251811,
+      "max_tyre_utilization": 0.4001902291703416,
+      "diff_torque_rms_nm": 0.0,
+      "final_speed_ms": 14.719757470161385,
+      "max_abs_slip": 0.0037853527890761465,
+      "max_wheel_torque_nm": 37.182184530594895
+    }
+  },
+  {
+    "scenario": "circle_track",
+    "controller": "p",
+    "duration_s": 8.0,
+    "metrics": {
+      "yaw_rmse_rads": 0.03905891714687073,
+      "cross_rmse_m": 0.27631897472157757,
+      "max_abs_beta_deg": 1.6381631834461745,
+      "max_tyre_utilization": 0.37965072620393425,
+      "diff_torque_rms_nm": 14.697820561194623,
+      "final_speed_ms": 14.720464417961644,
+      "max_abs_slip": 0.006144746988131593,
+      "max_wheel_torque_nm": 56.68732609671876
+    }
+  },
+  {
+    "scenario": "circle_track",
+    "controller": "lqr",
+    "duration_s": 8.0,
+    "metrics": {
+      "yaw_rmse_rads": 0.03501173243531886,
+      "cross_rmse_m": 0.2916516891910307,
+      "max_abs_beta_deg": 1.3714920527886068,
+      "max_tyre_utilization": 0.38964313902587233,
+      "diff_torque_rms_nm": 38.472084458109656,
+      "final_speed_ms": 14.746840316827933,
+      "max_abs_slip": 0.015236887125123015,
+      "max_wheel_torque_nm": 145.3321149617321
+    }
+  },
+  {
+    "scenario": "circle_track",
+    "controller": "ltv",
+    "duration_s": 8.0,
+    "metrics": {
+      "yaw_rmse_rads": 0.03940896429950904,
+      "cross_rmse_m": 0.3210952867090452,
+      "max_abs_beta_deg": 1.5318666060833832,
+      "max_tyre_utilization": 0.40384984426436044,
+      "diff_torque_rms_nm": 73.27601441651687,
+      "final_speed_ms": 14.944219808493324,
+      "max_abs_slip": 0.013294702374079832,
+      "max_wheel_torque_nm": 128.2110942437208,
+      "control_ticks": 200,
+      "predictive_state_excess": 0.0,
+      "maximum_allocation_residual_nm": 280.24230699381053
+    }
+  },
+  {
+    "scenario": "circle_track",
+    "controller": "nmpc",
+    "duration_s": 8.0,
+    "metrics": {
+      "yaw_rmse_rads": 0.039369181081759456,
+      "cross_rmse_m": 0.31614913056345073,
+      "max_abs_beta_deg": 1.5308908773295549,
+      "max_tyre_utilization": 0.40374671146350305,
+      "diff_torque_rms_nm": 69.98981867146817,
+      "final_speed_ms": 14.841524204784328,
+      "max_abs_slip": 0.013295401766733418,
+      "max_wheel_torque_nm": 128.21969884758232,
+      "control_ticks": 200,
+      "predictive_state_excess": 0.0,
+      "maximum_allocation_residual_nm": 280.1878871196677
+    }
+  },
+  {
+    "scenario": "double_lane_change",
+    "controller": "off",
+    "duration_s": 9.0,
+    "metrics": {
+      "yaw_rmse_rads": 0.12232080633121536,
+      "cross_rmse_m": 0.19600085551128188,
+      "max_abs_beta_deg": 3.0550241244112435,
+      "max_tyre_utilization": 0.5426174818952897,
+      "diff_torque_rms_nm": 0.0,
+      "final_speed_ms": 16.69300251548321,
+      "max_abs_slip": 0.004918743700230944,
+      "max_wheel_torque_nm": 45.07569223725756
+    }
+  },
+  {
+    "scenario": "double_lane_change",
+    "controller": "p",
+    "duration_s": 9.0,
+    "metrics": {
+      "yaw_rmse_rads": 0.09945069805437973,
+      "cross_rmse_m": 0.19897483615081984,
+      "max_abs_beta_deg": 2.5303539781526436,
+      "max_tyre_utilization": 0.475377315577381,
+      "diff_torque_rms_nm": 45.51367127930251,
+      "final_speed_ms": 16.736248613699267,
+      "max_abs_slip": 0.008408588510740715,
+      "max_wheel_torque_nm": 78.48512380779135
+    }
+  },
+  {
+    "scenario": "double_lane_change",
+    "controller": "lqr",
+    "duration_s": 9.0,
+    "metrics": {
+      "yaw_rmse_rads": 0.08460858893248592,
+      "cross_rmse_m": 0.22146348535880636,
+      "max_abs_beta_deg": 2.47721482671325,
+      "max_tyre_utilization": 0.495825253199513,
+      "diff_torque_rms_nm": 101.34290480462404,
+      "final_speed_ms": 17.739594406605754,
+      "max_abs_slip": 0.01675400022356359,
+      "max_wheel_torque_nm": 156.73238789533613
+    }
+  },
+  {
+    "scenario": "double_lane_change",
+    "controller": "ltv",
+    "duration_s": 9.0,
+    "metrics": {
+      "yaw_rmse_rads": 0.09686527229498647,
+      "cross_rmse_m": 0.22403993395626845,
+      "max_abs_beta_deg": 2.784847015731117,
+      "max_tyre_utilization": 0.5081135406615184,
+      "diff_torque_rms_nm": 98.80718095552731,
+      "final_speed_ms": 17.745747325032628,
+      "max_abs_slip": 0.013849403937942586,
+      "max_wheel_torque_nm": 130.47373012851264,
+      "control_ticks": 225,
+      "predictive_state_excess": 0.0,
+      "maximum_allocation_residual_nm": 344.53042962694906
+    }
+  },
+  {
+    "scenario": "double_lane_change",
+    "controller": "nmpc",
+    "duration_s": 9.0,
+    "metrics": {
+      "yaw_rmse_rads": 0.09441728639466435,
+      "cross_rmse_m": 0.22286865793559,
+      "max_abs_beta_deg": 2.755740285190165,
+      "max_tyre_utilization": 0.505653695756981,
+      "diff_torque_rms_nm": 98.582263374527,
+      "final_speed_ms": 17.749542001055218,
+      "max_abs_slip": 0.013808282772013653,
+      "max_wheel_torque_nm": 130.2985745884929,
+      "control_ticks": 225,
+      "predictive_state_excess": 0.0,
+      "maximum_allocation_residual_nm": 344.52810403142144
+    }
+  }
+]

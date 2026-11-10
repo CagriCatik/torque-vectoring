@@ -1,0 +1,17 @@
+{
+  "kind": "double_lane_change",
+  "speed_ms": 17.0,
+  "duration_s": 9.0,
+  "radius_m": 90.0,
+  "offset_m": 3.5,
+  "entry_m": 20.0,
+  "transition_m": 42.0,
+  "plateau_m": 25.0,
+  "steer_amplitude_deg": 1.5,
+  "steer_frequency_hz": 0.5,
+  "excitation_start_s": 1.0,
+  "max_steer_deg": 12.0,
+  "cross_gain": 0.85,
+  "heading_gain": 0.95,
+  "speed_kp_nm_per_ms": 65.0
+}

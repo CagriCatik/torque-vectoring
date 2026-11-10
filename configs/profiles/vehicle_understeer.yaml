@@ -1,0 +1,12 @@
+# Vehicle variant: clearly understeering set-up (self-steering gradient about +2.7 deg/g, characteristic speed
+# about 24 m/s). Represents e.g. narrower/harder front tyres and a front-biased roll stiffness in aggregate via
+# per-axle tyre scaling (physics.axle_tyre). Engineering assumption, not a measured vehicle.
+#   torquevector handling --profile configs/profiles/vehicle_understeer.yaml
+schema_version: 1
+profile:
+  id: vehicle_understeer
+  description: Untersteuernde Fahrzeugvariante (vordere Schräglaufsteifigkeit 0.80, vorderer Reibwert 0.95)
+  base: ../default.yaml
+  overrides:
+    tyre.axle_scaling.front.lateral_stiffness_scale: 0.80
+    tyre.axle_scaling.front.friction_scale: 0.95

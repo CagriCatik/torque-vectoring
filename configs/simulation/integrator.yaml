@@ -1,0 +1,18 @@
+# Integration der Pflanze innerhalb jedes ZOH-Halteintervalls (simulation.sampled.simulate_sampled).
+# Werte des kanonischen V11-Runners: rtol 2e-5, max_step = min(0.02, Periode), atol 1e-8, DOP853, root.
+schema_version: 1
+
+integrator:
+  id: dop853_zoh
+  description: Adaptive explizite Integration je Halteintervall, Regler nie im RHS
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: simulation.runner.simulate_controller / simulation.sampled.simulate_sampled (V11)
+    notes: Schrittweitenkonvergenz siehe docs/quality/SCENARIO_MATRIX.md (M06, S12).
+  method: DOP853
+  rtol: 2.0e-5
+  atol: 1.0e-8
+  max_step_s: 0.02
+  max_rhs_calls_per_period: 600
+  load_transfer_solver: root

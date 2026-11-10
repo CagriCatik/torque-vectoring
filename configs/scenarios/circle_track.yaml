@@ -1,0 +1,48 @@
+# Kreisfahrt mit Bahnregelung des Fahrers (Projektmanöver M02, nicht ISO 4138).
+schema_version: 1
+
+scenario:
+  id: circle_track
+  description: Geschlossene Kreisbahnfolge R=90 m
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: torquevector.domain.scenarios.presets()['circle_track'] (identisch mit configs/scenarios/circle_track.json)
+    notes: null
+  manoeuvre:
+    kind: circle_track
+    speed_ms: 15.0
+    duration_s: 8.0
+    path:
+      radius_m: 90.0
+      offset_m: 3.5
+      entry_m: 20.0
+      transition_m: 42.0
+      plateau_m: 25.0
+    steering:
+      amplitude_deg: 1.5
+      frequency_hz: 0.5
+      excitation_start_s: 1.0
+      max_steer_deg: 12.0
+    path_following:
+      cross_gain: 0.85
+      heading_gain: 0.95
+    speed_control:
+      kp_nm_per_ms: 65.0
+  simulation_duration_s: null   # null = manoeuvre.duration_s
+  initial_state:
+    x_m: 0.0
+    y_m: 0.0
+    yaw_rad: 0.0
+    vy_ms: 0.0
+    yaw_rate_rads: 0.0
+  road:
+    model: road_surface
+    surface: null            # null = includes.road der Anwendung (Standard: trockene Fahrbahn)
+    left_mu: null
+    right_mu: null
+    step_time_s: null
+    step_mu: null
+  brake_phase: null
+  envelope:
+    check_final_speed: true

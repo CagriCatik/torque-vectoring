@@ -1,0 +1,45 @@
+# Schwellen der Laufbewertung (evaluation.envelope) und des Projektkriteriums für Offline-Tuning.
+schema_version: 1
+
+thresholds:
+  id: v11_envelope
+  description: INVALID_MODEL_ENVELOPE-Grenzen je Lauf; Q11-Vorprüfung gegenüber OFF
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: evaluation.comparisons.assess (V11-Literale), optimization.tuning_nmpc (20 % / -10 %)
+    notes: Qualifikation ist keine Gate-Freigabe; Q11 bleibt BLOCKED.
+  envelope:
+    max_abs_slip: 0.5
+    max_tyre_utilization: 0.98
+    max_abs_beta_deg: 10.0
+    max_final_speed_deviation_ms: 3.0
+  qualification:
+    min_yaw_improvement_pct: 20.0
+    min_path_improvement_pct: -10.0
+  handling:                        # torquevector handling (evaluation.handling); Engineering-Annahmen
+    speeds_ms: [15.0, 20.0, 25.0]
+    controllers: [off, lqr]
+    lateral_limit_estimate_factor: 1.2   # Endlenkwinkel = L*factor*mu*g/v^2 + ramp_margin_deg
+    ramp_margin_deg: 11.0               # 20 m/s: about 16 deg road-wheel angle at the end of the ramp
+    driver_max_wheel_torque_nm: 700.0   # hold the speed at high lateral acceleration (ISO 4138: constant speed)
+    speed_kp_nm_per_ms: 250.0
+    linear_limit_g: 0.4
+    gradient_bands_g: [0.1, 0.3, 0.5, 0.7, 0.9]
+    neutral_tolerance_deg_per_g: 0.25
+    saturation_utilisation: 0.95
+    stop_sideslip_deg: 10.0
+    gg_directions: 72
+    gg_brake_in_turn_speed_ms: 20.0     # configs/scenarios/brake_in_turn.yaml (90 m circle)
+    gg_brake_in_turn_nm: [200.0, 400.0, 600.0, 750.0]
+    gg_rear_brake_fraction: 0.6
+    gg_straight_drive_nm: [400.0, 750.0]   # configs/scenarios/straight_split_mu_acceleration.yaml on dry asphalt
+    phase_plane:                        # constant small steer near the oversteer variant's critical speed
+      speed_ms: 25.0
+      steer_deg: 0.5
+      sideslip_range_deg: 8.0           # |vy| <= 5 m/s (scenario.initial_state)
+      yaw_rate_range_rads: 0.6
+      grid_sideslip: 7
+      grid_yaw_rate: 5
+      duration_s: 3.0
+      settled_yaw_acceleration_rads2: 0.05

@@ -1,0 +1,44 @@
+# Unkalibrierte Demonstrator-Formparameter (torquevector.domain.tyre.TyreParameters-Defaults) mit
+# isotroper Kamm-Kreis-Projektion (physics.tyre_magic_formula.tyre_forces). Verwendet vom
+# Live-Dashboard und historischen V5-Werkzeugen. SYNTHETISCH, keine Messung.
+schema_version: 1
+
+tyre:
+  id: pacejka_baseline
+  description: Reine MF-B/C/E-Kurven, Kamm-Kreis für kombinierten Schlupf
+  provenance:
+    source_type: synthetic
+    experimentally_validated: false
+    origin: torquevector.domain.tyre.TyreParameters / MagicFormulaAxis (V11-Defaults, AST-eingefroren)
+    notes: Demonstratorwerte ohne Kalibrierung.
+
+  model: magic_formula_bce
+
+  friction:
+    mu: 0.95
+    reference_load_n: 4000.0
+    load_sensitivity_exponent: -0.06
+
+  longitudinal:
+    B: 11.0
+    C: 1.65
+    E: 0.45
+
+  lateral:
+    B: 7.0
+    C: 1.45
+    E: 0.35
+
+  combined_slip:
+    model: kamm_circle
+    alpha_scale_rad: null
+    kappa_scale: null
+    lateral_peak_fraction: null
+    longitudinal_peak_fraction: null
+
+  axle_scaling:                    # Eigenlenkverhalten je Achse (physics.axle_tyre); 1.0 = unskaliert, bitgleich
+    front: {lateral_stiffness_scale: 1.0, friction_scale: 1.0}
+    rear: {lateral_stiffness_scale: 1.0, friction_scale: 1.0}
+
+  operating_limits:
+    max_abs_longitudinal_slip: 0.5

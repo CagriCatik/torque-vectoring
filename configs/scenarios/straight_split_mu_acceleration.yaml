@@ -1,0 +1,54 @@
+# Szenario C: Beschleunigung mit festen Radmomenten auf Split-mu (links nass ab x = 20 m), Allrad.
+# Antriebsmomente liegen unter der Nass-Kapazität (~550 Nm); keine Traktionskontrolle im Modell.
+schema_version: 1
+
+scenario:
+  id: straight_split_mu_acceleration
+  description: Beschleunigung 10 -> 25 m/s auf Split-mu mit Spurhaltung
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: torquevector 12.1 road-friction scenario set (straight_split_mu_acceleration); synthetic friction values
+    notes: "Feste Radmomente 450 Nm ab 1.5 s; ohne Traktionskontrolle."
+  manoeuvre:
+    kind: straight
+    speed_ms: 25.0
+    initial_speed_ms: 10.0
+    duration_s: 4.0
+    path:
+      radius_m: 90.0
+      offset_m: 3.5
+      entry_m: 20.0
+      transition_m: 42.0
+      plateau_m: 25.0
+    steering:
+      amplitude_deg: 0.0
+      frequency_hz: 0.5
+      excitation_start_s: 1.0
+      max_steer_deg: 12.0
+    path_following:
+      cross_gain: 0.85
+      heading_gain: 0.95
+    speed_control:
+      kp_nm_per_ms: 65.0
+  simulation_duration_s: null
+  initial_state:
+    x_m: 0.0
+    y_m: 0.0
+    yaw_rad: 0.0
+    vy_ms: 0.0
+    yaw_rate_rads: 0.0
+  road:
+    model: road_surface
+    surface: ../roads/split_mu.yaml
+    left_mu: null
+    right_mu: null
+    step_time_s: null
+    step_mu: null
+  brake_phase: null
+  drive_phase:
+    start_s: 1.5
+    ramp_s: 0.3
+    drive_torque_nm: {FL: 450.0, FR: 450.0, RL: 450.0, RR: 450.0}
+  envelope:
+    check_final_speed: false

@@ -1,0 +1,11 @@
+# Profil: radindividuelle Schlupfregelung (ABS/ASR, erste Version) einschalten.
+#   torquevector compare --config configs/scenarios/straight_split_mu_braking.yaml --profile configs/profiles/slip_control.yaml
+# Synthetisches Ersatzmodell, keine Serien-ABS-Abbildung (siehe docs/slip_control/SLIP_CONTROL.md).
+schema_version: 1
+profile:
+  id: slip_control
+  description: ABS und ASR aktiv (innerer 5-ms-Schlupfregler je Rad)
+  base: ../default.yaml
+  overrides:
+    powertrain.slip_control.abs_enabled: true
+    powertrain.slip_control.asr_enabled: true

@@ -1,0 +1,46 @@
+# Offline-Abstimmung ltv_mpc: Suchraum, Kostenfunktion und Manöver aus optimization.tuning_*
+# (V10/V11). Ergebnisse unter results/optimization/<studie>_pso_<datum>_<id>/; die Regler-YAML
+# unter configs/controllers/ wird nie überschrieben. Hold-out nie im Optimierer.
+schema_version: 1
+
+tuning:
+  id: ltv_mpc_weights
+  description: Zustands-/Stellgewichte ltv_mpc gegen OFF-normierte Gier-/Bahnfehler
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: optimization.tuning_ltv (BOUNDS, TRAIN, HOLDOUT, fitness)
+    notes: Robustheitsfälle werden nach der Suche ohne Nachoptimierung bewertet.
+  controller: ltv
+  application: ../default.yaml
+  algorithm: pso.yaml
+  search_space:
+    - {parameter: weights.beta_scale_rad, lower: 0.018, upper: 0.14}
+    - {parameter: weights.yaw_scale_rads, lower: 0.025, upper: 0.16}
+    - {parameter: weights.input_weight, lower: 0.02, upper: 2.0}
+    - {parameter: weights.slew_weight, lower: 0.0, upper: 0.9}
+  initial_position: current_controller_config
+  objective:
+    formula: weighted_squared_ratios
+    weights:
+      yaw_rmse: 0.52
+      cross_rmse: 0.32
+      max_beta: 0.06
+      soft_state: 0.05
+      allocation_residual: 0.05
+    normalization:
+      max_beta_deg: 10.0
+      soft_state_excess: 0.02
+      allocation_residual_nm: 500.0
+    invalid_candidate_cost: 1000000.0
+  cases:
+    matrix: ../validation/scenario_matrix.yaml
+    train: train
+    holdout: holdout
+    robustness: robustness
+  baseline_controller: "off"
+  checkpoint:
+    enabled: true
+    file_name: checkpoint.jsonl
+  output:
+    root: results/optimization

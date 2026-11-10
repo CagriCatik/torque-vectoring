@@ -1,0 +1,12 @@
+# Schnelle Entwicklungsläufe: kurzes Manöver, nur Basisregler ohne CasADi, kleines GIF.
+# Ändert keine Modellphysik und keine Reglergewichte.
+schema_version: 1
+
+profile:
+  id: development
+  description: Kurzlauf (2 s) mit OFF/P/LQR für schnelle Rückmeldung; keine Validierungsaussage
+  base: ../default.yaml
+  overrides:
+    scenario.simulation_duration_s: 2.0
+    run.controllers: [off, p, lqr]
+    visualization.gif_export.max_frames: 30

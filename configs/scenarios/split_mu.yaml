@@ -1,0 +1,48 @@
+# Split-mu: physics.road.FrictionMap über dem konfigurierten Combined-Slip-Reifenmodell.
+schema_version: 1
+
+scenario:
+  id: split_mu
+  description: Lenksprung auf Split-mu (links 0.42, rechts 0.95)
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: "cli.legacy.run_v5_grip_tests / evaluation.legacy_grip.run_tests (V5-Störmanöver): FrictionMap(0.42, 0.95)"
+    notes: Neu konfiguriertes, nicht validiertes Szenario; Reibwerte aus V5. Reibwertkarte ersetzt Reifen-mu je Seite.
+  manoeuvre:
+    kind: step_steer
+    speed_ms: 17.0
+    duration_s: 5.0
+    path:
+      radius_m: 90.0
+      offset_m: 3.5
+      entry_m: 20.0
+      transition_m: 42.0
+      plateau_m: 25.0
+    steering:
+      amplitude_deg: 1.6
+      frequency_hz: 0.5
+      excitation_start_s: 1.0
+      max_steer_deg: 12.0
+    path_following:
+      cross_gain: 0.85
+      heading_gain: 0.95
+    speed_control:
+      kp_nm_per_ms: 65.0
+  simulation_duration_s: null   # null = manoeuvre.duration_s
+  initial_state:
+    x_m: 0.0
+    y_m: 0.0
+    yaw_rad: 0.0
+    vy_ms: 0.0
+    yaw_rate_rads: 0.0
+  road:
+    model: friction_map
+    surface: null
+    left_mu: 0.42
+    right_mu: 0.95
+    step_time_s: null
+    step_mu: null
+  brake_phase: null
+  envelope:
+    check_final_speed: true

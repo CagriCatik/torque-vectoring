@@ -1,0 +1,42 @@
+# LTV-MPC (control.controllers.ltv_mpc.LTVConfig) mit linearem Einspur-Prädiktor.
+# Werte = LTVConfig-Defaults (identisch mit configs/controllers/ltv.json).
+schema_version: 1
+
+controller:
+  type: ltv_mpc
+  id: ltv_mpc
+  description: Lineares zeitvariantes MPC, harte Stellgrenzen, weiche Zustandsgrenzen
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: torquevector.control.controllers.ltv_mpc.LTVConfig (V11-Defaults, AST-eingefroren)
+    notes: Gewichte stammen nicht aus einem abgeschlossenen PSO-/Hold-out-Lauf.
+  sample_s: 0.04
+  horizon_steps: 16
+  weights:
+    beta_scale_rad: 0.06
+    yaw_scale_rads: 0.07
+    moment_scale_nm: 1100.0
+    input_weight: 0.12
+    slew_weight: 0.06
+    terminal_weight: 1.0
+    state_soft_weight: 50.0
+  limits:
+    moment_limit_nm: 900.0
+    moment_slew_nm_s: 6000.0
+    beta_limit_rad: 0.17
+    yaw_limit_fraction: 0.9
+    mu_reference: 0.9
+  friction_knowledge:
+    mode: unknown        # map_preview: Kartenreibwert entlang der vorhergesagten Trajektorie
+  model_validity:
+    min_speed_ms: 5.0
+    max_speed_ms: 40.0
+  prediction_model: linear_bicycle_ltv
+  preview: manoeuvre_preview
+  solver:
+    method: SLSQP
+    ftol: 1.0e-8
+    max_iterations: 75
+    warm_start: previous_command
+    failure_policy: fail_closed

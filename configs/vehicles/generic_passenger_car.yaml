@@ -1,0 +1,38 @@
+# Generischer Pkw des V11-Simulators. Werte 1:1 aus torquevector.domain.vehicle.VehicleParameters
+# (V11-Referenz, identisch mit dem eingefrorenen Strukturregressionsstand).
+# SYNTHETISCH: keine Messdaten eines realen Fahrzeugs.
+schema_version: 1
+
+vehicle:
+  id: generic_passenger_car
+  description: Synthetischer Mittelklasse-Pkw, Vier-Rad-Modell mit quasi-statischer Lastverlagerung
+  provenance:
+    source_type: synthetic
+    validated_against_real_vehicle: false
+    origin: torquevector.domain.vehicle.VehicleParameters (V11-Defaults, AST-eingefroren)
+    notes: Demonstratorwerte; Q10 bleibt REQUIRED_REAL_DATA.
+
+  mass_kg: 1600.0
+
+  geometry:
+    wheelbase_m: 2.76
+    track_m: 1.62            # vorne = hinten; getrennte Spurweiten sind nicht modelliert
+    cg_to_front_axle_m: 1.18 # Hinterachse: 2.76 - 1.18 = 1.58 m (abgeleitet)
+    cg_height_m: 0.52
+
+  inertia:
+    yaw_kgm2: 2600.0
+
+  aerodynamics:
+    drag_area_m2: 0.65
+    air_density_kgm3: 1.225
+
+  rolling_resistance:
+    coefficient: 0.012
+
+  environment:
+    gravity_ms2: 9.81
+
+  load_transfer:
+    enabled: true
+    model: quasi_static_fixed_split

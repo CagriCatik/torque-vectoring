@@ -1,0 +1,31 @@
+{
+  "dataset_kind": "synthetic_independent_surrogate",
+  "source": "tireviz.synthetic_lab.generate",
+  "seed": 20261025,
+  "model": "tanh-based brush-inspired surrogate (NOT Magic Formula)",
+  "assumed_road": "dry, homogeneous",
+  "measurement_status": "NO PHYSICAL MEASUREMENTS",
+  "units": {
+    "slip_ratio": "1",
+    "alpha": "rad",
+    "forces": "N",
+    "fz": "N",
+    "temperature": "degC",
+    "pressure": "kPa",
+    "speed": "m/s"
+  },
+  "split_protocol": "Entire independent acquisition runs held out; no shared run_id",
+  "known_omissions": [
+    "camber",
+    "pneumatic trail",
+    "thermal dynamics",
+    "road texture",
+    "frequency dependence",
+    "hysteresis"
+  ],
+  "rows_by_split": {
+    "train": 1436,
+    "holdout": 718,
+    "stress": 718
+  }
+}

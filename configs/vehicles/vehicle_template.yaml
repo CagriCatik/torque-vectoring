@@ -1,0 +1,32 @@
+# VORLAGE für weitere Fahrzeuge. Nicht als Laufzeitkonfiguration zulässig (template: true).
+# Kopieren, template entfernen, jeden null-Wert durch belegte Werte ersetzen und die Provenienz
+# ehrlich angeben (synthetische Werte niemals als validiert kennzeichnen).
+schema_version: 1
+template: true
+
+vehicle:
+  id: null
+  description: null
+  provenance:
+    source_type: null          # synthetic | synthetic_calibrated | engineering_assumption | literature | measured
+    validated_against_real_vehicle: false
+    origin: null               # Datenblatt, Messkampagne, Bericht
+    notes: null
+  mass_kg: null                # [kg] > 0
+  geometry:
+    wheelbase_m: null          # [m] > 0
+    track_m: null              # [m] > 0, vorne = hinten
+    cg_to_front_axle_m: null   # [m] 0 < Wert < wheelbase_m
+    cg_height_m: null          # [m] >= 0
+  inertia:
+    yaw_kgm2: null             # [kg*m^2] > 0
+  aerodynamics:
+    drag_area_m2: null         # [m^2] c_w*A >= 0
+    air_density_kgm3: null     # [kg/m^3] > 0
+  rolling_resistance:
+    coefficient: null          # [1] >= 0
+  environment:
+    gravity_ms2: null          # [m/s^2] > 0
+  load_transfer:
+    enabled: null              # true | false
+    model: quasi_static_fixed_split

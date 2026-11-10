@@ -1,0 +1,14 @@
+# Harte Stellgrößen-Slew-Limits der ZOH-Schleife (simulation.sampled.slew_limit).
+schema_version: 1
+
+limits:
+  id: zoh_command_slew
+  description: Änderungsraten je Takt für Radmomente und Lenkkommando
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: simulation.runner.simulate_controller (1500 Nm/s), SampledSettings (120 deg/s)
+    notes: null
+  command_slew:
+    wheel_torque_rate_nm_s: 1500.0
+    steer_command_rate_deg_s: 120.0

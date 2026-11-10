@@ -1,0 +1,24 @@
+# Statische Vergleichsdiagramme aus gespeicherter Telemetrie (visualization.comparison.chart).
+# Default = bisheriges 2x2-Bild. Zusätzlich wählbar: torque_allocation (Antriebsmoment RR-RL).
+schema_version: 1
+
+static_plots:
+  id: controller_comparison
+  description: Trajektorie, Gierrate, Schwimmwinkel, Reifenausnutzung je Regler
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: torquevector.visualization.comparison.chart (V11)
+    notes: Einzelradkräfte zeigt das Live-Dashboard bzw. tvsim legacy fahrzeug_reifenkraefte_2d.
+  panels: [trajectory, yaw_rate, sideslip, tyre_utilization]
+  figure_size_in: [12.0, 8.0]
+  dpi: 140
+  formats: [png]
+  file_stem: comparison
+  legend: true
+  grid_alpha: 0.25
+  colors: null
+  utilization_ylim_max: 1.05
+  auto_report: true          # nach simulate/compare: plots/*.png + plots/report.pdf
+  report_sections: [overview, kpi, tracking, allocation, wheels, friction_circle, handling, solver, tyre, road_map, road_mu]
+  provenance_label: SYNTHETIC | NOT VEHICLE VALIDATED

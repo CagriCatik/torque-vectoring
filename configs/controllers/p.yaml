@@ -1,0 +1,20 @@
+# Proportionaler Gierratenregler (control.controllers.p.ProportionalYaw) im gemeinsamen
+# Allocation-Pfad. Abtastzeit = simulation.sampling.control_period_s (alle Regler gleich).
+# Sollwertfilter (Einblendrampe) und Sollgierratengrenze: configs/simulation/driver.yaml.
+schema_version: 1
+
+controller:
+  type: p
+  id: p_yaw_rate
+  description: P-Regler Gierratenfehler -> Zusatzgiermoment
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: simulation.runner.simulate_controller (gain 2300.0), control.pipeline.YawControlPipeline
+    notes: null
+  gain_nm_per_rads: 2300.0
+  output:
+    yaw_moment_limit_nm: 2000.0
+  yaw_reference:
+    mu_source: tyre     # Reibwert der Reifen-YAML (bisher tyre.mu)
+    mu: null

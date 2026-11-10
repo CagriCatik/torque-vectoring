@@ -1,0 +1,15 @@
+[run]
+branch = True
+source =
+    src/torquevector/domain
+    src/torquevector/physics
+    src/torquevector/prediction
+    src/torquevector/control
+    src/torquevector/simulation
+    src/torquevector/evaluation
+
+[report]
+show_missing = True
+skip_empty = True
+precision = 1
+

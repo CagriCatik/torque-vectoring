@@ -1,0 +1,17 @@
+# Bestehendes interaktives Live-Dashboard (cli.dashboard, Slider + Kammsche Kreise).
+# Es nutzt das schlupfgetriebene Demonstratormodell (simulation.slip.simulate) mit
+# MF + Kamm-Kreis; das Combined-Slip-Surrogat der Reifen-YAML wird dort nicht verwendet.
+schema_version: 1
+
+live_plots:
+  id: slider_dashboard
+  description: Interaktive Slider-Ansicht; headless mit tvsim dashboard --no-gui
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: torquevector.cli.dashboard.dashboard (figsize 18x10.3, dt 0.02)
+    notes: null
+  enabled: true
+  figure_size_in: [18.0, 10.3]
+  integration_step_s: 0.02
+  show_four_wheel_forces: true

@@ -1,0 +1,43 @@
+# Vier unabhängige Radmomente, Bremse und Lenkaktuator des kanonischen ZOH-Runners.
+# Werte aus simulation.runner.simulate_controller (V11): TorqueControls()-Startwerte,
+# policy_4wd-Verteilung 0.2/0.2/0.3/0.3 und SteeringActuator(0.12, 120.).
+schema_version: 1
+
+powertrain:
+  id: four_wheel_independent
+  description: Radindividueller Antrieb/Bremse mit gemeinsamer Momentgrenze, PT1-Lenkaktuator
+  provenance:
+    source_type: synthetic
+    experimentally_validated: false
+    origin: simulation.runner.simulate_controller, domain.controls.TorqueControls, simulation.policies.policy_4wd
+    notes: Wirkungsgrad, Motorkennfeld und Bremsdynamik sind nicht modelliert.
+
+  layout: four_wheel_independent
+  wheel_torque_limit_nm: 800.0     # gilt für Antrieb UND Bremse je Rad
+
+  drive_distribution:              # Anteile des Fahrer-Gesamtmoments, Summe = 1
+    FL: 0.2
+    FR: 0.2
+    RL: 0.3
+    RR: 0.3
+
+  initial_state:                   # Startwerte der Slew-Begrenzung vor dem ersten Regeltakt
+    drive_torque_nm: {FL: 0.0, FR: 0.0, RL: 80.0, RR: 80.0}
+    brake_torque_nm: {FL: 0.0, FR: 0.0, RL: 0.0, RR: 0.0}
+    steer_command_deg: 0.0
+
+  steering_actuator:
+    time_constant_s: 0.12
+    rate_limit_deg_s: 120.0
+    max_angle_deg: 25.0
+    dead_time_s: 0.0               # nicht modelliert (fest)
+
+  slip_control:                    # ABS/ASR, innerer Mehrraten-Regler (control.slip_control); Standard aus
+    abs_enabled: false             # Profil configs/profiles/slip_control.yaml schaltet ein
+    asr_enabled: false
+    period_s: 0.005                # 200 Hz innerhalb des 40-ms-TV-Takts (Engineering-Annahme)
+    abs_target_slip: 0.10          # nahe dem Kraftmaximum des synthetischen Reifens (siehe docs/slip_control)
+    asr_target_slip: 0.10
+    kp: 4.0
+    ki_per_s: 60.0
+    torque_rate_nm_s: 20000.0      # schneller als die TV-Slew-Grenze; Bremsdruckdynamik nicht modelliert

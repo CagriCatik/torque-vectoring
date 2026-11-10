@@ -1,0 +1,41 @@
+# Gemischte Fahrbahn: 0-30 m trocken, 30-45 m nass (volle Breite), 45-70 m trocken,
+# 70-85 m links nass / rechts trocken, ab 85 m trocken. Synthetische Beispielwerte.
+schema_version: 1
+
+road:
+  id: mixed_surface
+  description: Geradeausstrecke mit Nassabschnitt und Split-mu-Abschnitt
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: example layout of the torquevector 12.1 road-friction set
+    notes: Rechteckgrenzen halboffen [min, max); spätere Regionen haben Vorrang.
+  coordinate_system:
+    x_axis: forward
+    y_axis: left
+    units: meters
+  default_surface:
+    material: dry_asphalt
+    mu: 0.90
+  regions:
+    - id: wet_section_1
+      type: rectangle
+      material: wet_asphalt
+      mu: 0.40
+      bounds: {x_min_m: 30.0, x_max_m: 45.0, y_min_m: -4.0, y_max_m: 4.0}
+    - id: split_mu_left_wet
+      type: rectangle
+      material: wet_asphalt
+      mu: 0.40
+      bounds: {x_min_m: 70.0, x_max_m: 85.0, y_min_m: 0.0, y_max_m: 4.0}
+    - id: split_mu_right_dry
+      type: rectangle
+      material: dry_asphalt
+      mu: 0.90
+      bounds: {x_min_m: 70.0, x_max_m: 85.0, y_min_m: -4.0, y_max_m: 0.0}
+  transition:
+    mode: sharp
+    smoothing_distance_m: 0.0
+  friction_model:
+    mode: scale_tyre_mu
+    reference_mu: 0.90

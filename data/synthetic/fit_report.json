@@ -1,0 +1,79 @@
+{
+  "source_kind": "SYNTHETIC_ONLY",
+  "independent_truth_model": "brush-inspired tanh force surrogate",
+  "fitted_model": "pure MF B/C/E plus non-MF smooth opposing-slip damping",
+  "metadata": {
+    "dataset_kind": "synthetic_independent_surrogate",
+    "source": "tireviz.synthetic_lab.generate",
+    "seed": 20261025,
+    "model": "tanh-based brush-inspired surrogate (NOT Magic Formula)",
+    "assumed_road": "dry, homogeneous",
+    "measurement_status": "NO PHYSICAL MEASUREMENTS",
+    "units": {
+      "slip_ratio": "1",
+      "alpha": "rad",
+      "forces": "N",
+      "fz": "N",
+      "temperature": "degC",
+      "pressure": "kPa",
+      "speed": "m/s"
+    },
+    "split_protocol": "Entire independent acquisition runs held out; no shared run_id",
+    "known_omissions": [
+      "camber",
+      "pneumatic trail",
+      "thermal dynamics",
+      "road texture",
+      "frequency dependence",
+      "hysteresis"
+    ],
+    "rows_by_split": {
+      "train": 1436,
+      "holdout": 718,
+      "stress": 718
+    }
+  },
+  "fit_parameters": {
+    "Bx": 6.072859506275652,
+    "Cx": 1.6393309486032712,
+    "Ex": 0.3852757656227038,
+    "By": 3.682458107119364,
+    "Cy": 1.9548567452761896,
+    "Ey": 0.2959144450178403,
+    "mu": 1.0049454296189615,
+    "load_exponent": -0.07155738497857973,
+    "alpha_scale_rad": 0.23572224878419124,
+    "kappa_scale": 0.13953873041633566
+  },
+  "metrics": {
+    "train": {
+      "joint_nrmse": 0.03081092776439417,
+      "fx_rmse_n": 123.7074078501468,
+      "fy_rmse_n": 105.39042687591697,
+      "n": 1436
+    },
+    "holdout": {
+      "joint_nrmse": 0.034082700362412593,
+      "fx_rmse_n": 113.22316329206319,
+      "fy_rmse_n": 91.59955724456975,
+      "n": 718
+    },
+    "stress": {
+      "joint_nrmse": 0.06289930429022736,
+      "fx_rmse_n": 221.73656380027913,
+      "fy_rmse_n": 177.82648512766275,
+      "n": 718
+    }
+  },
+  "optimization": {
+    "method": "TRF soft_l1 multi-start",
+    "restarts": 3,
+    "seed": 903,
+    "success": true,
+    "evaluations": 47,
+    "jacobian_condition_number": 59583.276026503365,
+    "parameters_at_bounds": []
+  },
+  "experimental_validation": false,
+  "quality_gate_q10": "BLOCKED_NO_REAL_MEASUREMENTS"
+}

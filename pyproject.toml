@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "torquevector"
+version = "12.1.0"
+description = "torquevector: synthetic four-wheel vehicle dynamics and torque-vectoring simulator (P/LQR/LTV-MPC/NMPC)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=2.0",
+    "scipy>=1.11",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+nmpc = [
+    "casadi>=3.6,<4",
+]
+viz = [
+    "matplotlib>=3.7",
+    "pillow>=9",
+]
+dev = [
+    "coverage>=7",
+    "black>=24",
+    "build>=1",
+]
+
+[project.scripts]
+torquevector = "torquevector.cli.main:main"
+tvsim = "torquevector.cli.main:main"
+
+[project.urls]
+Homepage = "https://github.com/CagriCatik/torque-vectoring"
+Repository = "https://github.com/CagriCatik/torque-vectoring"
+Issues = "https://github.com/CagriCatik/torque-vectoring/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+torquevector = [
+    "resources/quality/*.json",
+    "resources/quality/*.csv",
+    "resources/synthetic/*.json",
+    "resources/synthetic/*.csv",
+    "resources/synthetic/*.png",
+]
+
+[tool.black]
+line-length = 120
+target-version = ["py310", "py311", "py312", "py313"]
+skip-string-normalization = true
+

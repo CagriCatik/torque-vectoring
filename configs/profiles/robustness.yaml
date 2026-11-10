@@ -1,0 +1,11 @@
+# Robustheit ohne Nachoptimierung: Masse +10 % und Reifen-mu -10 % (Werte der V8-Studie),
+# jeweils Kreis und DLC, alle Regler. Ergebnisse sind synthetisch, keine Q11-Freigabe.
+schema_version: 1
+
+profile:
+  id: robustness
+  description: Parameterstörungen aus scenario_matrix.yaml (Menge robustness)
+  base: ../default.yaml
+  overrides:
+    run.controllers: [off, p, lqr, ltv, nmpc]
+    run.matrix_set: robustness

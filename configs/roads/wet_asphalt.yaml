@@ -1,0 +1,22 @@
+# Gleichförmig nasser Asphalt (synthetischer Beispielwert mu 0.40).
+schema_version: 1
+
+road:
+  id: wet_asphalt
+  description: Gleichförmig nasse Fahrbahn
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: synthetic example value of the torquevector 12.1 road-friction set (mu 0.40)
+    notes: Keine gemessene Fahrbahn.
+  coordinate_system: {x_axis: forward, y_axis: left, units: meters}
+  default_surface:
+    material: wet_asphalt
+    mu: 0.40
+  regions: []
+  transition:
+    mode: sharp
+    smoothing_distance_m: 0.0
+  friction_model:
+    mode: scale_tyre_mu
+    reference_mu: 0.90

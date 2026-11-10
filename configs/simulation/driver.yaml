@@ -1,0 +1,22 @@
+# Reglerunabhängiger Fahrer und gemeinsame Sollwertbildung. Zusätzliche Datei (über die
+# Mindeststruktur hinaus), weil diese Werte weder zu einem Regler noch zu einem Szenario gehören:
+# alle Regler müssen exakt dieselbe Mission und Sollgierrate erhalten.
+schema_version: 1
+
+driver:
+  id: path_following_driver
+  description: Bahnfolge-/Geschwindigkeitsfahrer, Sollgierraten-Einblendung und -Begrenzung, Vorschau
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: simulation.driving.ManoeuvrePolicy, simulation.policies.make_reference, simulation.preview_adapter, control.pipeline
+    notes: null
+  base_policy:
+    max_base_wheel_torque_nm: 250.0
+    step_steer_ramp_s: 0.4
+  yaw_reference:
+    source: driver_steering    # seit V12.1 (Q11): Fahrerabsicht v*tan(delta)/L; bis V12 path_curvature (v*kappa)
+    engage_ramp_s: 0.55
+    friction_fraction: 0.75
+  preview:
+    speed_time_constant_s: 2.0

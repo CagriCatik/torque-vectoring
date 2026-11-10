@@ -1,0 +1,215 @@
+{
+  "version": "1.0",
+  "min_points_per_category": 8,
+  "critical_check_requires": 2,
+  "categories": [
+    {
+      "id": "Q01",
+      "name": "Parameter und Geltungsbereich",
+      "check_count": 5,
+      "check_ids": [
+        "Q01.1",
+        "Q01.2",
+        "Q01.3",
+        "Q01.4",
+        "Q01.5"
+      ],
+      "critical_checks": [
+        "Q01.1",
+        "Q01.2"
+      ]
+    },
+    {
+      "id": "Q02",
+      "name": "Pacejka Pure Slip",
+      "check_count": 5,
+      "check_ids": [
+        "Q02.1",
+        "Q02.2",
+        "Q02.3",
+        "Q02.4",
+        "Q02.5"
+      ],
+      "critical_checks": [
+        "Q02.1",
+        "Q02.2"
+      ]
+    },
+    {
+      "id": "Q03",
+      "name": "Combined Slip und Kammscher Kreis",
+      "check_count": 5,
+      "check_ids": [
+        "Q03.1",
+        "Q03.2",
+        "Q03.3",
+        "Q03.4",
+        "Q03.5"
+      ],
+      "critical_checks": [
+        "Q03.2",
+        "Q03.3"
+      ]
+    },
+    {
+      "id": "Q04",
+      "name": "Radkinematik und Schlupf",
+      "check_count": 5,
+      "check_ids": [
+        "Q04.1",
+        "Q04.2",
+        "Q04.3",
+        "Q04.4",
+        "Q04.5"
+      ],
+      "critical_checks": [
+        "Q04.1",
+        "Q04.4"
+      ]
+    },
+    {
+      "id": "Q05",
+      "name": "Fahrzeugdynamik und Radlast",
+      "check_count": 5,
+      "check_ids": [
+        "Q05.1",
+        "Q05.2",
+        "Q05.3",
+        "Q05.4",
+        "Q05.5"
+      ],
+      "critical_checks": [
+        "Q05.1",
+        "Q05.4"
+      ]
+    },
+    {
+      "id": "Q06",
+      "name": "Radrotation und Momentenantrieb",
+      "check_count": 5,
+      "check_ids": [
+        "Q06.1",
+        "Q06.2",
+        "Q06.3",
+        "Q06.4",
+        "Q06.5"
+      ],
+      "critical_checks": [
+        "Q06.1",
+        "Q06.2"
+      ]
+    },
+    {
+      "id": "Q07",
+      "name": "Numerische Robustheit",
+      "check_count": 5,
+      "check_ids": [
+        "Q07.1",
+        "Q07.2",
+        "Q07.3",
+        "Q07.4",
+        "Q07.5"
+      ],
+      "critical_checks": [
+        "Q07.2",
+        "Q07.3"
+      ]
+    },
+    {
+      "id": "Q08",
+      "name": "Physikalische Invarianten",
+      "check_count": 5,
+      "check_ids": [
+        "Q08.1",
+        "Q08.2",
+        "Q08.3",
+        "Q08.4",
+        "Q08.5"
+      ],
+      "critical_checks": [
+        "Q08.1",
+        "Q08.2"
+      ]
+    },
+    {
+      "id": "Q09",
+      "name": "Unabhaengige theoretische Benchmarks",
+      "check_count": 5,
+      "check_ids": [
+        "Q09.1",
+        "Q09.2",
+        "Q09.3",
+        "Q09.4",
+        "Q09.5"
+      ],
+      "critical_checks": [
+        "Q09.1",
+        "Q09.2"
+      ]
+    },
+    {
+      "id": "Q10",
+      "name": "Experimentelle Validierung",
+      "check_count": 5,
+      "check_ids": [
+        "Q10.1",
+        "Q10.2",
+        "Q10.3",
+        "Q10.4",
+        "Q10.5"
+      ],
+      "critical_checks": [
+        "Q10.1",
+        "Q10.2"
+      ]
+    },
+    {
+      "id": "Q11",
+      "name": "Torque Vectoring und Regelung",
+      "check_count": 5,
+      "check_ids": [
+        "Q11.1",
+        "Q11.2",
+        "Q11.3",
+        "Q11.4",
+        "Q11.5"
+      ],
+      "critical_checks": [
+        "Q11.1",
+        "Q11.2"
+      ]
+    },
+    {
+      "id": "Q12",
+      "name": "2D-Visualisierung und Telemetrie",
+      "check_count": 5,
+      "check_ids": [
+        "Q12.1",
+        "Q12.2",
+        "Q12.3",
+        "Q12.4",
+        "Q12.5"
+      ],
+      "critical_checks": [
+        "Q12.2",
+        "Q12.3"
+      ]
+    },
+    {
+      "id": "Q13",
+      "name": "Softwarearchitektur, Tests und Reproduzierbarkeit",
+      "check_count": 5,
+      "check_ids": [
+        "Q13.1",
+        "Q13.2",
+        "Q13.3",
+        "Q13.4",
+        "Q13.5"
+      ],
+      "critical_checks": [
+        "Q13.1",
+        "Q13.2"
+      ]
+    }
+  ]
+}

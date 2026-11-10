@@ -1,0 +1,25 @@
+# Offline-PSO-Einstellungen (optimization.pso.PSOSettings). NIE in der Regelschleife.
+# Budget 3 Partikel x 2 Iterationen = bisheriger tvsim-tune-Smoke (configs/optimizations/*.json);
+# das ist ausdrücklich KEIN globaler Optimalitätsnachweis. Für echte Studien erhöhen.
+schema_version: 1
+
+pso:
+  id: pso_smoke
+  description: Global-Best-PSO im normierten Suchraum, deterministisch über seed
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: configs/optimizations/nmpc_pso.json (particles/iterations/seed), PSOSettings (Koeffizienten)
+    notes: null
+  algorithm: global_best_pso_normalized_box
+  particles: 3
+  iterations: 2
+  seed: 42
+  cognitive: 1.5
+  social: 1.5
+  inertia_start: 0.75
+  inertia_end: 0.4
+  velocity_clamp: 0.3
+  boundary_handling: clip_and_zero_velocity
+  parallel_workers: 1
+  default_study: nmpc_tuning.yaml

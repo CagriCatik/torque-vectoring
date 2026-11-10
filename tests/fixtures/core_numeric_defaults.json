@@ -1,0 +1,1214 @@
+[
+ {
+  "module": "torquevector.control.allocation",
+  "symbol": "AllocationOptions",
+  "name": "intervention_penalty",
+  "value": 0.45
+ },
+ {
+  "module": "torquevector.control.allocation",
+  "symbol": "AllocationOptions",
+  "name": "max_delta_nm",
+  "value": 130.0
+ },
+ {
+  "module": "torquevector.control.allocation",
+  "symbol": "AllocationOptions",
+  "name": "mu_reference",
+  "value": 0.95
+ },
+ {
+  "module": "torquevector.control.allocation",
+  "symbol": "AllocationOptions",
+  "name": "total_weight",
+  "value": 2.0
+ },
+ {
+  "module": "torquevector.control.allocation",
+  "symbol": "AllocationOptions",
+  "name": "yaw_kp_nm_per_rads",
+  "value": 2300.0
+ },
+ {
+  "module": "torquevector.control.allocation",
+  "symbol": "AllocationOptions",
+  "name": "yaw_weight",
+  "value": 1.0
+ },
+ {
+  "module": "torquevector.control.controllers.legacy",
+  "symbol": "YawRateController",
+  "name": "kp_nm_per_rads",
+  "value": 1500.0
+ },
+ {
+  "module": "torquevector.control.controllers.legacy",
+  "symbol": "YawRateController",
+  "name": "max_delta_nm",
+  "value": 100.0
+ },
+ {
+  "module": "torquevector.control.controllers.legacy",
+  "symbol": "YawRateController",
+  "name": "mu",
+  "value": 0.95
+ },
+ {
+  "module": "torquevector.control.controllers.legacy",
+  "symbol": "YawRateController",
+  "name": "safety_friction_fraction",
+  "value": 0.75
+ },
+ {
+  "module": "torquevector.control.controllers.legacy",
+  "symbol": "YawRateController",
+  "name": "wheelbase_m",
+  "value": 2.76
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_constrained_mpc",
+  "symbol": "MPCv9Config",
+  "name": "beta_limit_rad",
+  "value": 0.18
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_constrained_mpc",
+  "symbol": "MPCv9Config",
+  "name": "beta_scale_rad",
+  "value": 0.075
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_constrained_mpc",
+  "symbol": "MPCv9Config",
+  "name": "horizon_steps",
+  "value": 10
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_constrained_mpc",
+  "symbol": "MPCv9Config",
+  "name": "input_weight",
+  "value": 0.22
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_constrained_mpc",
+  "symbol": "MPCv9Config",
+  "name": "max_speed_ms",
+  "value": 40.0
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_constrained_mpc",
+  "symbol": "MPCv9Config",
+  "name": "min_speed_ms",
+  "value": 5.0
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_constrained_mpc",
+  "symbol": "MPCv9Config",
+  "name": "moment_limit_nm",
+  "value": 900.0
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_constrained_mpc",
+  "symbol": "MPCv9Config",
+  "name": "moment_scale_nm",
+  "value": 1200.0
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_constrained_mpc",
+  "symbol": "MPCv9Config",
+  "name": "moment_slew_nm_s",
+  "value": 6000.0
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_constrained_mpc",
+  "symbol": "MPCv9Config",
+  "name": "reference_mu",
+  "value": 0.9
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_constrained_mpc",
+  "symbol": "MPCv9Config",
+  "name": "sample_s",
+  "value": 0.04
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_constrained_mpc",
+  "symbol": "MPCv9Config",
+  "name": "slew_weight",
+  "value": 0.35
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_constrained_mpc",
+  "symbol": "MPCv9Config",
+  "name": "solver_max_iter",
+  "value": 90
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_constrained_mpc",
+  "symbol": "MPCv9Config",
+  "name": "speed_grid_ms",
+  "value": 0.5
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_constrained_mpc",
+  "symbol": "MPCv9Config",
+  "name": "yaw_accel_fraction",
+  "value": 0.9
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_constrained_mpc",
+  "symbol": "MPCv9Config",
+  "name": "yaw_scale_rads",
+  "value": 0.06
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_mpc",
+  "symbol": "MPCConfig",
+  "name": "beta_scale_rad",
+  "value": 0.06
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_mpc",
+  "symbol": "MPCConfig",
+  "name": "feedforward_weight",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_mpc",
+  "symbol": "MPCConfig",
+  "name": "horizon_steps",
+  "value": 7
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_mpc",
+  "symbol": "MPCConfig",
+  "name": "input_weight",
+  "value": 0.3
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_mpc",
+  "symbol": "MPCConfig",
+  "name": "max_speed_ms",
+  "value": 40.0
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_mpc",
+  "symbol": "MPCConfig",
+  "name": "min_speed_ms",
+  "value": 5.0
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_mpc",
+  "symbol": "MPCConfig",
+  "name": "moment_limit_nm",
+  "value": 900.0
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_mpc",
+  "symbol": "MPCConfig",
+  "name": "moment_scale_nm",
+  "value": 1000.0
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_mpc",
+  "symbol": "MPCConfig",
+  "name": "sample_s",
+  "value": 0.12
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_mpc",
+  "symbol": "MPCConfig",
+  "name": "slew_weight",
+  "value": 0.15
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_mpc",
+  "symbol": "MPCConfig",
+  "name": "speed_grid_ms",
+  "value": 0.5
+ },
+ {
+  "module": "torquevector.control.controllers.legacy_mpc",
+  "symbol": "MPCConfig",
+  "name": "yaw_scale_rads",
+  "value": 0.08
+ },
+ {
+  "module": "torquevector.control.controllers.lqr",
+  "symbol": "LQRConfig",
+  "name": "feedforward_weight",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.control.controllers.lqr",
+  "symbol": "LQRConfig",
+  "name": "max_speed_ms",
+  "value": 45.0
+ },
+ {
+  "module": "torquevector.control.controllers.lqr",
+  "symbol": "LQRConfig",
+  "name": "min_speed_ms",
+  "value": 5.0
+ },
+ {
+  "module": "torquevector.control.controllers.lqr",
+  "symbol": "LQRConfig",
+  "name": "moment_scale_nm",
+  "value": 1500.0
+ },
+ {
+  "module": "torquevector.control.controllers.lqr",
+  "symbol": "LQRConfig",
+  "name": "sideslip_scale_rad",
+  "value": 0.05
+ },
+ {
+  "module": "torquevector.control.controllers.lqr",
+  "symbol": "LQRConfig",
+  "name": "speed_grid_ms",
+  "value": 0.5
+ },
+ {
+  "module": "torquevector.control.controllers.lqr",
+  "symbol": "LQRConfig",
+  "name": "yaw_rate_scale_rads",
+  "value": 0.08
+ },
+ {
+  "module": "torquevector.control.controllers.ltv_mpc",
+  "symbol": "LTVConfig",
+  "name": "beta_limit_rad",
+  "value": 0.17
+ },
+ {
+  "module": "torquevector.control.controllers.ltv_mpc",
+  "symbol": "LTVConfig",
+  "name": "beta_scale_rad",
+  "value": 0.06
+ },
+ {
+  "module": "torquevector.control.controllers.ltv_mpc",
+  "symbol": "LTVConfig",
+  "name": "horizon_steps",
+  "value": 16
+ },
+ {
+  "module": "torquevector.control.controllers.ltv_mpc",
+  "symbol": "LTVConfig",
+  "name": "input_weight",
+  "value": 0.12
+ },
+ {
+  "module": "torquevector.control.controllers.ltv_mpc",
+  "symbol": "LTVConfig",
+  "name": "max_iterations",
+  "value": 75
+ },
+ {
+  "module": "torquevector.control.controllers.ltv_mpc",
+  "symbol": "LTVConfig",
+  "name": "max_speed_ms",
+  "value": 40.0
+ },
+ {
+  "module": "torquevector.control.controllers.ltv_mpc",
+  "symbol": "LTVConfig",
+  "name": "min_speed_ms",
+  "value": 5.0
+ },
+ {
+  "module": "torquevector.control.controllers.ltv_mpc",
+  "symbol": "LTVConfig",
+  "name": "moment_limit_nm",
+  "value": 900.0
+ },
+ {
+  "module": "torquevector.control.controllers.ltv_mpc",
+  "symbol": "LTVConfig",
+  "name": "moment_scale_nm",
+  "value": 1100.0
+ },
+ {
+  "module": "torquevector.control.controllers.ltv_mpc",
+  "symbol": "LTVConfig",
+  "name": "moment_slew_nm_s",
+  "value": 6000.0
+ },
+ {
+  "module": "torquevector.control.controllers.ltv_mpc",
+  "symbol": "LTVConfig",
+  "name": "mu_reference",
+  "value": 0.9
+ },
+ {
+  "module": "torquevector.control.controllers.ltv_mpc",
+  "symbol": "LTVConfig",
+  "name": "sample_s",
+  "value": 0.04
+ },
+ {
+  "module": "torquevector.control.controllers.ltv_mpc",
+  "symbol": "LTVConfig",
+  "name": "slew_weight",
+  "value": 0.06
+ },
+ {
+  "module": "torquevector.control.controllers.ltv_mpc",
+  "symbol": "LTVConfig",
+  "name": "state_soft_weight",
+  "value": 50.0
+ },
+ {
+  "module": "torquevector.control.controllers.ltv_mpc",
+  "symbol": "LTVConfig",
+  "name": "terminal_weight",
+  "value": 1.0
+ },
+ {
+  "module": "torquevector.control.controllers.ltv_mpc",
+  "symbol": "LTVConfig",
+  "name": "yaw_limit_fraction",
+  "value": 0.9
+ },
+ {
+  "module": "torquevector.control.controllers.ltv_mpc",
+  "symbol": "LTVConfig",
+  "name": "yaw_scale_rads",
+  "value": 0.07
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCConfig",
+  "name": "beta_limit_rad",
+  "value": 0.17
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCConfig",
+  "name": "beta_scale_rad",
+  "value": 0.06
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCConfig",
+  "name": "horizon_steps",
+  "value": 10
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCConfig",
+  "name": "input_weight",
+  "value": 0.12
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCConfig",
+  "name": "max_iterations",
+  "value": 35
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCConfig",
+  "name": "max_speed_ms",
+  "value": 40.0
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCConfig",
+  "name": "min_speed_ms",
+  "value": 5.0
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCConfig",
+  "name": "moment_limit_nm",
+  "value": 900.0
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCConfig",
+  "name": "moment_scale_nm",
+  "value": 1100.0
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCConfig",
+  "name": "moment_slew_nm_s",
+  "value": 6000.0
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCConfig",
+  "name": "mu_reference",
+  "value": 0.9
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCConfig",
+  "name": "sample_s",
+  "value": 0.04
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCConfig",
+  "name": "slew_weight",
+  "value": 0.06
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCConfig",
+  "name": "state_soft_weight",
+  "value": 50.0
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCConfig",
+  "name": "terminal_weight",
+  "value": 1.0
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCConfig",
+  "name": "tolerance",
+  "value": 1e-05
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCConfig",
+  "name": "yaw_limit_fraction",
+  "value": 0.9
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCConfig",
+  "name": "yaw_scale_rads",
+  "value": 0.07
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCSolverSettings",
+  "name": "acceptable_tol_factor",
+  "value": 10.0
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCSolverSettings",
+  "name": "acceptable_tol_floor",
+  "value": 0.0001
+ },
+ {
+  "module": "torquevector.control.controllers.nmpc",
+  "symbol": "NMPCSolverSettings",
+  "name": "print_level",
+  "value": 0
+ },
+ {
+  "module": "torquevector.control.controllers.p",
+  "symbol": "ProportionalYaw",
+  "name": "gain_nm_per_rads",
+  "value": 2300.0
+ },
+ {
+  "module": "torquevector.control.factory",
+  "symbol": "make_controller",
+  "name": "proportional_gain",
+  "value": 2300.0
+ },
+ {
+  "module": "torquevector.control.factory",
+  "symbol": "make_strategy",
+  "name": "proportional_gain",
+  "value": 2300
+ },
+ {
+  "module": "torquevector.control.interfaces",
+  "symbol": "ControllerRequest",
+  "name": "previous_nm",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.control.interfaces",
+  "symbol": "ControllerRequest",
+  "name": "reference",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.control.interfaces",
+  "symbol": "ControllerRequest",
+  "name": "steering_rad",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.control.pipeline",
+  "symbol": "YawControlPipeline",
+  "name": "reference_friction_fraction",
+  "value": 0.75
+ },
+ {
+  "module": "torquevector.control.pipeline",
+  "symbol": "YawControlPipeline",
+  "name": "reference_mu",
+  "value": 0.95
+ },
+ {
+  "module": "torquevector.control.pipeline",
+  "symbol": "YawControlPipeline",
+  "name": "yaw_limit_nm",
+  "value": 2000.0
+ },
+ {
+  "module": "torquevector.domain.controls",
+  "symbol": "DriverControls",
+  "name": "slip_ratios",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.domain.controls",
+  "symbol": "DriverControls",
+  "name": "slip_ratios",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.domain.controls",
+  "symbol": "DriverControls",
+  "name": "slip_ratios",
+  "value": 0.01
+ },
+ {
+  "module": "torquevector.domain.controls",
+  "symbol": "DriverControls",
+  "name": "slip_ratios",
+  "value": 0.025
+ },
+ {
+  "module": "torquevector.domain.controls",
+  "symbol": "DriverControls",
+  "name": "steer_deg",
+  "value": 2.0
+ },
+ {
+  "module": "torquevector.domain.controls",
+  "symbol": "TorqueControls",
+  "name": "brake_nm",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.domain.controls",
+  "symbol": "TorqueControls",
+  "name": "brake_nm",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.domain.controls",
+  "symbol": "TorqueControls",
+  "name": "brake_nm",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.domain.controls",
+  "symbol": "TorqueControls",
+  "name": "brake_nm",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.domain.controls",
+  "symbol": "TorqueControls",
+  "name": "drive_nm",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.domain.controls",
+  "symbol": "TorqueControls",
+  "name": "drive_nm",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.domain.controls",
+  "symbol": "TorqueControls",
+  "name": "drive_nm",
+  "value": 80.0
+ },
+ {
+  "module": "torquevector.domain.controls",
+  "symbol": "TorqueControls",
+  "name": "drive_nm",
+  "value": 80.0
+ },
+ {
+  "module": "torquevector.domain.controls",
+  "symbol": "TorqueControls",
+  "name": "steer_deg",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.domain.controls",
+  "symbol": "TorqueControls",
+  "name": "torque_limit_nm",
+  "value": 800.0
+ },
+ {
+  "module": "torquevector.domain.controls",
+  "symbol": "YawReference",
+  "name": "sideslip_rad",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.domain.scenarios",
+  "symbol": "CirclePath",
+  "name": "radius_m",
+  "value": 90.0
+ },
+ {
+  "module": "torquevector.domain.scenarios",
+  "symbol": "DoubleLaneChangePath",
+  "name": "entry_x_m",
+  "value": 20.0
+ },
+ {
+  "module": "torquevector.domain.scenarios",
+  "symbol": "DoubleLaneChangePath",
+  "name": "offset_m",
+  "value": 3.5
+ },
+ {
+  "module": "torquevector.domain.scenarios",
+  "symbol": "DoubleLaneChangePath",
+  "name": "plateau_m",
+  "value": 25.0
+ },
+ {
+  "module": "torquevector.domain.scenarios",
+  "symbol": "DoubleLaneChangePath",
+  "name": "transition_m",
+  "value": 42.0
+ },
+ {
+  "module": "torquevector.domain.scenarios",
+  "symbol": "ManoeuvreSpec",
+  "name": "cross_gain",
+  "value": 0.85
+ },
+ {
+  "module": "torquevector.domain.scenarios",
+  "symbol": "ManoeuvreSpec",
+  "name": "duration_s",
+  "value": 8.0
+ },
+ {
+  "module": "torquevector.domain.scenarios",
+  "symbol": "ManoeuvreSpec",
+  "name": "entry_m",
+  "value": 20.0
+ },
+ {
+  "module": "torquevector.domain.scenarios",
+  "symbol": "ManoeuvreSpec",
+  "name": "excitation_start_s",
+  "value": 1.0
+ },
+ {
+  "module": "torquevector.domain.scenarios",
+  "symbol": "ManoeuvreSpec",
+  "name": "heading_gain",
+  "value": 0.95
+ },
+ {
+  "module": "torquevector.domain.scenarios",
+  "symbol": "ManoeuvreSpec",
+  "name": "max_steer_deg",
+  "value": 12.0
+ },
+ {
+  "module": "torquevector.domain.scenarios",
+  "symbol": "ManoeuvreSpec",
+  "name": "offset_m",
+  "value": 3.5
+ },
+ {
+  "module": "torquevector.domain.scenarios",
+  "symbol": "ManoeuvreSpec",
+  "name": "plateau_m",
+  "value": 25.0
+ },
+ {
+  "module": "torquevector.domain.scenarios",
+  "symbol": "ManoeuvreSpec",
+  "name": "radius_m",
+  "value": 90.0
+ },
+ {
+  "module": "torquevector.domain.scenarios",
+  "symbol": "ManoeuvreSpec",
+  "name": "speed_kp_nm_per_ms",
+  "value": 65.0
+ },
+ {
+  "module": "torquevector.domain.scenarios",
+  "symbol": "ManoeuvreSpec",
+  "name": "speed_ms",
+  "value": 18.0
+ },
+ {
+  "module": "torquevector.domain.scenarios",
+  "symbol": "ManoeuvreSpec",
+  "name": "steer_amplitude_deg",
+  "value": 1.5
+ },
+ {
+  "module": "torquevector.domain.scenarios",
+  "symbol": "ManoeuvreSpec",
+  "name": "steer_frequency_hz",
+  "value": 0.5
+ },
+ {
+  "module": "torquevector.domain.scenarios",
+  "symbol": "ManoeuvreSpec",
+  "name": "transition_m",
+  "value": 42.0
+ },
+ {
+  "module": "torquevector.domain.states",
+  "symbol": "VehicleState",
+  "name": "vx_ms",
+  "value": 18.0
+ },
+ {
+  "module": "torquevector.domain.states",
+  "symbol": "VehicleState",
+  "name": "vy_ms",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.domain.states",
+  "symbol": "VehicleState",
+  "name": "x_m",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.domain.states",
+  "symbol": "VehicleState",
+  "name": "y_m",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.domain.states",
+  "symbol": "VehicleState",
+  "name": "yaw_rad",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.domain.states",
+  "symbol": "VehicleState",
+  "name": "yaw_rate_rads",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.domain.tyre",
+  "symbol": "MagicFormulaAxis",
+  "name": "b",
+  "value": 11.0
+ },
+ {
+  "module": "torquevector.domain.tyre",
+  "symbol": "MagicFormulaAxis",
+  "name": "c",
+  "value": 1.65
+ },
+ {
+  "module": "torquevector.domain.tyre",
+  "symbol": "MagicFormulaAxis",
+  "name": "e",
+  "value": 0.45
+ },
+ {
+  "module": "torquevector.domain.tyre",
+  "symbol": "TyreParameters",
+  "name": "lateral",
+  "value": 0.35
+ },
+ {
+  "module": "torquevector.domain.tyre",
+  "symbol": "TyreParameters",
+  "name": "lateral",
+  "value": 1.45
+ },
+ {
+  "module": "torquevector.domain.tyre",
+  "symbol": "TyreParameters",
+  "name": "lateral",
+  "value": 7.0
+ },
+ {
+  "module": "torquevector.domain.tyre",
+  "symbol": "TyreParameters",
+  "name": "load_exponent",
+  "value": -0.06
+ },
+ {
+  "module": "torquevector.domain.tyre",
+  "symbol": "TyreParameters",
+  "name": "longitudinal",
+  "value": 0.45
+ },
+ {
+  "module": "torquevector.domain.tyre",
+  "symbol": "TyreParameters",
+  "name": "longitudinal",
+  "value": 1.65
+ },
+ {
+  "module": "torquevector.domain.tyre",
+  "symbol": "TyreParameters",
+  "name": "longitudinal",
+  "value": 11.0
+ },
+ {
+  "module": "torquevector.domain.tyre",
+  "symbol": "TyreParameters",
+  "name": "mu",
+  "value": 0.95
+ },
+ {
+  "module": "torquevector.domain.tyre",
+  "symbol": "TyreParameters",
+  "name": "nominal_fz_n",
+  "value": 4000.0
+ },
+ {
+  "module": "torquevector.domain.vehicle",
+  "symbol": "VehicleParameters",
+  "name": "air_density_kgm3",
+  "value": 1.225
+ },
+ {
+  "module": "torquevector.domain.vehicle",
+  "symbol": "VehicleParameters",
+  "name": "cd_area_m2",
+  "value": 0.65
+ },
+ {
+  "module": "torquevector.domain.vehicle",
+  "symbol": "VehicleParameters",
+  "name": "cg_height_m",
+  "value": 0.52
+ },
+ {
+  "module": "torquevector.domain.vehicle",
+  "symbol": "VehicleParameters",
+  "name": "cg_to_front_m",
+  "value": 1.18
+ },
+ {
+  "module": "torquevector.domain.vehicle",
+  "symbol": "VehicleParameters",
+  "name": "gravity",
+  "value": 9.81
+ },
+ {
+  "module": "torquevector.domain.vehicle",
+  "symbol": "VehicleParameters",
+  "name": "iz_kgm2",
+  "value": 2600.0
+ },
+ {
+  "module": "torquevector.domain.vehicle",
+  "symbol": "VehicleParameters",
+  "name": "mass_kg",
+  "value": 1600.0
+ },
+ {
+  "module": "torquevector.domain.vehicle",
+  "symbol": "VehicleParameters",
+  "name": "rolling_coefficient",
+  "value": 0.012
+ },
+ {
+  "module": "torquevector.domain.vehicle",
+  "symbol": "VehicleParameters",
+  "name": "track_m",
+  "value": 1.62
+ },
+ {
+  "module": "torquevector.domain.vehicle",
+  "symbol": "VehicleParameters",
+  "name": "wheelbase_m",
+  "value": 2.76
+ },
+ {
+  "module": "torquevector.domain.wheels",
+  "symbol": "WheelParameters",
+  "name": "inertia_kgm2",
+  "value": 1.45
+ },
+ {
+  "module": "torquevector.domain.wheels",
+  "symbol": "WheelParameters",
+  "name": "max_abs_slip",
+  "value": 0.5
+ },
+ {
+  "module": "torquevector.domain.wheels",
+  "symbol": "WheelParameters",
+  "name": "min_contact_speed_ms",
+  "value": 3.0
+ },
+ {
+  "module": "torquevector.domain.wheels",
+  "symbol": "WheelParameters",
+  "name": "radius_m",
+  "value": 0.315
+ },
+ {
+  "module": "torquevector.physics.combined_slip",
+  "symbol": "CombinedSlipShape",
+  "name": "alpha_scale_rad",
+  "value": 0.17
+ },
+ {
+  "module": "torquevector.physics.combined_slip",
+  "symbol": "CombinedSlipShape",
+  "name": "kappa_scale",
+  "value": 0.19
+ },
+ {
+  "module": "torquevector.physics.combined_slip",
+  "symbol": "CombinedSlipShape",
+  "name": "lateral_peak_fraction",
+  "value": 1.0
+ },
+ {
+  "module": "torquevector.physics.combined_slip",
+  "symbol": "CombinedSlipShape",
+  "name": "longitudinal_peak_fraction",
+  "value": 1.0
+ },
+ {
+  "module": "torquevector.physics.four_wheel",
+  "symbol": "evaluate",
+  "name": "load_guess",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.physics.four_wheel",
+  "symbol": "evaluate",
+  "name": "load_guess",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.physics.load_transfer",
+  "symbol": "wheel_loads",
+  "name": "ax_ms2",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.physics.load_transfer",
+  "symbol": "wheel_loads",
+  "name": "ay_ms2",
+  "value": 0.0
+ },
+ {
+  "module": "torquevector.physics.road",
+  "symbol": "FrictionMap",
+  "name": "left_mu",
+  "value": 0.95
+ },
+ {
+  "module": "torquevector.physics.road",
+  "symbol": "FrictionMap",
+  "name": "right_mu",
+  "value": 0.95
+ },
+ {
+  "module": "torquevector.physics.steering",
+  "symbol": "SteeringActuator",
+  "name": "max_angle_deg",
+  "value": 25.0
+ },
+ {
+  "module": "torquevector.physics.steering",
+  "symbol": "SteeringActuator",
+  "name": "rate_limit_deg_s",
+  "value": 120.0
+ },
+ {
+  "module": "torquevector.physics.steering",
+  "symbol": "SteeringActuator",
+  "name": "time_constant_s",
+  "value": 0.12
+ },
+ {
+  "module": "torquevector.simulation.continuous",
+  "symbol": "simulate_torque",
+  "name": "duration_s",
+  "value": 2.0
+ },
+ {
+  "module": "torquevector.simulation.continuous",
+  "symbol": "simulate_torque",
+  "name": "max_rhs_calls",
+  "value": 12000
+ },
+ {
+  "module": "torquevector.simulation.continuous",
+  "symbol": "simulate_torque",
+  "name": "max_step",
+  "value": 0.02
+ },
+ {
+  "module": "torquevector.simulation.continuous",
+  "symbol": "simulate_torque",
+  "name": "output_dt",
+  "value": 0.02
+ },
+ {
+  "module": "torquevector.simulation.continuous",
+  "symbol": "simulate_torque",
+  "name": "rtol",
+  "value": 1e-07
+ },
+ {
+  "module": "torquevector.simulation.continuous",
+  "symbol": "simulate_torque",
+  "name": "speed_ms",
+  "value": 18.0
+ },
+ {
+  "module": "torquevector.simulation.driving",
+  "symbol": "ManoeuvrePolicy",
+  "name": "max_drive_torque_nm",
+  "value": 250.0
+ },
+ {
+  "module": "torquevector.simulation.driving",
+  "symbol": "ManoeuvrePolicy",
+  "name": "step_ramp_s",
+  "value": 0.4
+ },
+ {
+  "module": "torquevector.simulation.driving",
+  "symbol": "ManoeuvrePolicy",
+  "name": "tyre_radius_m",
+  "value": 0.315
+ },
+ {
+  "module": "torquevector.simulation.policies",
+  "symbol": "make_reference",
+  "name": "engage_ramp_s",
+  "value": 0.55
+ },
+ {
+  "module": "torquevector.simulation.policies",
+  "symbol": "policy_4wd",
+  "name": "distribution",
+  "value": 0.2
+ },
+ {
+  "module": "torquevector.simulation.policies",
+  "symbol": "policy_4wd",
+  "name": "distribution",
+  "value": 0.2
+ },
+ {
+  "module": "torquevector.simulation.policies",
+  "symbol": "policy_4wd",
+  "name": "distribution",
+  "value": 0.3
+ },
+ {
+  "module": "torquevector.simulation.policies",
+  "symbol": "policy_4wd",
+  "name": "distribution",
+  "value": 0.3
+ },
+ {
+  "module": "torquevector.simulation.preview_adapter",
+  "symbol": "make_maneuver_preview",
+  "name": "engage_ramp_s",
+  "value": 0.55
+ },
+ {
+  "module": "torquevector.simulation.preview_adapter",
+  "symbol": "make_maneuver_preview",
+  "name": "friction_fraction",
+  "value": 0.75
+ },
+ {
+  "module": "torquevector.simulation.preview_adapter",
+  "symbol": "make_maneuver_preview",
+  "name": "speed_time_constant_s",
+  "value": 2.0
+ },
+ {
+  "module": "torquevector.simulation.sampled",
+  "symbol": "SampledSettings",
+  "name": "atol",
+  "value": 1e-08
+ },
+ {
+  "module": "torquevector.simulation.sampled",
+  "symbol": "SampledSettings",
+  "name": "max_rhs_per_period",
+  "value": 600
+ },
+ {
+  "module": "torquevector.simulation.sampled",
+  "symbol": "SampledSettings",
+  "name": "max_steer_rate_command_deg_s",
+  "value": 120.0
+ },
+ {
+  "module": "torquevector.simulation.sampled",
+  "symbol": "SampledSettings",
+  "name": "max_step_s",
+  "value": 0.06
+ },
+ {
+  "module": "torquevector.simulation.sampled",
+  "symbol": "SampledSettings",
+  "name": "max_torque_rate_nm_s",
+  "value": 3000.0
+ },
+ {
+  "module": "torquevector.simulation.sampled",
+  "symbol": "SampledSettings",
+  "name": "period_s",
+  "value": 0.12
+ },
+ {
+  "module": "torquevector.simulation.sampled",
+  "symbol": "SampledSettings",
+  "name": "rtol",
+  "value": 2e-05
+ },
+ {
+  "module": "torquevector.simulation.sampled",
+  "symbol": "simulate_sampled",
+  "name": "duration_s",
+  "value": 7.0
+ },
+ {
+  "module": "torquevector.simulation.sampled",
+  "symbol": "simulate_sampled",
+  "name": "speed_ms",
+  "value": 18.0
+ },
+ {
+  "module": "torquevector.simulation.slip",
+  "symbol": "simulate",
+  "name": "dt",
+  "value": 0.02
+ },
+ {
+  "module": "torquevector.simulation.slip",
+  "symbol": "simulate",
+  "name": "duration_s",
+  "value": 4.5
+ },
+ {
+  "module": "torquevector.simulation.slip",
+  "symbol": "simulate",
+  "name": "speed_ms",
+  "value": 18.0
+ }
+]

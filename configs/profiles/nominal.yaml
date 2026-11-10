@@ -1,0 +1,10 @@
+# Nominale Manövermatrix mit allen Reglern und Referenzparametern.
+schema_version: 1
+
+profile:
+  id: nominal
+  description: Kreis, DLC, Lenksprung, Sinuslenken bei Preset-Geschwindigkeiten
+  base: ../default.yaml
+  overrides:
+    run.controllers: [off, p, lqr, ltv, nmpc]
+    run.matrix_set: nominal

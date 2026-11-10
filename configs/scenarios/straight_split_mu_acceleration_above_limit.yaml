@@ -1,0 +1,54 @@
+# Szenario F (ASR): Allrad-Beschleunigung auf Split-mu ÜBER der Nass-Haftgrenze (800 Nm je Rad > ~550 Nm).
+# Ohne ASR dreht das nasse Rad durch => FAIL_CLOSED; mit configs/profiles/slip_control.yaml begrenzt ASR den Schlupf.
+schema_version: 1
+
+scenario:
+  id: straight_split_mu_acceleration_above_limit
+  description: Volllast-Beschleunigung auf Split-mu über der Haftgrenze (ASR-Fall)
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: torquevector 12.1 slip-control scenario set (scenario F); synthetic friction values
+    notes: "Feste Radmomente 800 Nm (Aktuatorgrenze) ab 1.5 s; nur mit ASR definiert."
+  manoeuvre:
+    kind: straight
+    speed_ms: 25.0
+    initial_speed_ms: 10.0
+    duration_s: 4.0
+    path:
+      radius_m: 90.0
+      offset_m: 3.5
+      entry_m: 20.0
+      transition_m: 42.0
+      plateau_m: 25.0
+    steering:
+      amplitude_deg: 0.0
+      frequency_hz: 0.5
+      excitation_start_s: 1.0
+      max_steer_deg: 12.0
+    path_following:
+      cross_gain: 0.85
+      heading_gain: 0.95
+    speed_control:
+      kp_nm_per_ms: 65.0
+  simulation_duration_s: null
+  initial_state:
+    x_m: 0.0
+    y_m: 0.0
+    yaw_rad: 0.0
+    vy_ms: 0.0
+    yaw_rate_rads: 0.0
+  road:
+    model: road_surface
+    surface: ../roads/split_mu.yaml
+    left_mu: null
+    right_mu: null
+    step_time_s: null
+    step_mu: null
+  brake_phase: null
+  drive_phase:
+    start_s: 1.5
+    ramp_s: 0.3
+    drive_torque_nm: {FL: 800.0, FR: 800.0, RL: 800.0, RR: 800.0}
+  envelope:
+    check_final_speed: false

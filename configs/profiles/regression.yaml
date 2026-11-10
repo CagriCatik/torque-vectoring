@@ -1,0 +1,14 @@
+# Eingefrorene Strukturregression: Kreis 15 m/s/8 s und DLC 17 m/s/9 s mit allen Reglern.
+# Ergebnisse müssen tests/fixtures/structure_nominal_reference.json reproduzieren (rtol 1e-9).
+schema_version: 1
+
+profile:
+  id: regression
+  description: 10 Referenzfälle (2 Manöver x 5 Regler), keine Parameteränderung
+  base: ../default.yaml
+  overrides:
+    run.controllers: [off, p, lqr, ltv, nmpc]
+    run.matrix_set: regression
+    # eingefrorener V11-Stand: Sollgierrate aus Bahnkrümmung, Allokation nur mit Aktuatorgrenzen
+    simulation.driver.yaw_reference.source: path_curvature
+    allocation.friction_limit.mode: "off"

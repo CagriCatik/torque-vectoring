@@ -1,0 +1,20 @@
+# Read-only-Spiegel der fachlichen Quality-Gates Q01-Q13. Autoritativ bleibt das Manifest
+# (docs/quality/quality_gate_manifest.json = Paketressource). Jede Abweichung ist ein
+# Konfigurationsfehler; Gates, Mindestpunkte und Zustände sind nicht über YAML änderbar.
+schema_version: 1
+
+quality_gates:
+  id: q01_q13
+  description: Jedes Gate >= 8/10, kritische Prüfungen bestanden; Q10 REQUIRED_REAL_DATA, Q11 BLOCKED
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: docs/quality/QUALITY_GATES.md, docs/quality/quality_gate_manifest.json
+    notes: Struktur- oder Konfigurationserfolg ist keine physikalische Freigabe.
+  manifest_resource: quality/quality_gate_manifest.json
+  gates: [Q01, Q02, Q03, Q04, Q05, Q06, Q07, Q08, Q09, Q10, Q11, Q12, Q13]
+  min_points_per_gate: 8
+  critical_check_requires_points: 2
+  status:
+    Q10: REQUIRED_REAL_DATA
+    Q11: BLOCKED

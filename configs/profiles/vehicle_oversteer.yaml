@@ -1,0 +1,12 @@
+# Vehicle variant: oversteering set-up (self-steering gradient about -1.7 deg/g, critical speed about 30 m/s).
+# Represents e.g. a weaker rear axle in aggregate via per-axle tyre scaling (physics.axle_tyre).
+# Engineering assumption, not a measured vehicle.
+#   torquevector handling --profile configs/profiles/vehicle_oversteer.yaml
+schema_version: 1
+profile:
+  id: vehicle_oversteer
+  description: Übersteuernde Fahrzeugvariante (hintere Schräglaufsteifigkeit 0.85, hinterer Reibwert 0.95)
+  base: ../default.yaml
+  overrides:
+    tyre.axle_scaling.rear.lateral_stiffness_scale: 0.85
+    tyre.axle_scaling.rear.friction_scale: 0.95

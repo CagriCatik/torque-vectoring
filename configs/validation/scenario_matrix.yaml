@@ -1,0 +1,65 @@
+# Benannte Fallmengen. Szenariopfade relativ zu dieser Datei; speed_ms/duration_s/overrides
+# überschreiben das Szenario für genau diesen Fall (Overrides als Punktpfade).
+schema_version: 1
+
+scenario_matrix:
+  id: v11_matrix
+  description: Regression, Nominal, Training, Hold-out, Robustheit
+  provenance:
+    source_type: engineering_assumption
+    experimentally_validated: false
+    origin: tests/fixtures/structure_nominal_reference.json, optimization.tuning_nmpc (TRAIN/HOLDOUT), cli.legacy.run_v8_robustness
+    notes: Hold-out nach Geschwindigkeit getrennt; Robustheitswerte aus der V8-Studie (Masse +10 %, mu -10 %).
+  sets:
+    regression:            # eingefrorene Strukturregression (rtol 1e-9)
+      - {id: circle_track_15, scenario: ../scenarios/circle_track.yaml, speed_ms: 15.0, duration_s: 8.0}
+      - {id: double_lane_change_17, scenario: ../scenarios/double_lane_change.yaml, speed_ms: 17.0, duration_s: 9.0}
+    nominal:
+      - {id: circle_track, scenario: ../scenarios/circle_track.yaml}
+      - {id: double_lane_change, scenario: ../scenarios/double_lane_change.yaml}
+      - {id: step_steer, scenario: ../scenarios/step_steer.yaml}
+      - {id: sine_steer, scenario: ../scenarios/sine_steer.yaml}
+    disturbance:
+      - {id: brake_in_turn, scenario: ../scenarios/brake_in_turn.yaml}
+      - {id: split_mu, scenario: ../scenarios/split_mu.yaml}
+      - {id: mu_step, scenario: ../scenarios/mu_step.yaml}
+    train:
+      - {id: circle_track_15, scenario: ../scenarios/circle_track.yaml, speed_ms: 15.0, duration_s: 6.0}
+      - {id: double_lane_change_17, scenario: ../scenarios/double_lane_change.yaml, speed_ms: 17.0, duration_s: 6.0}
+    holdout:
+      - {id: circle_track_19, scenario: ../scenarios/circle_track.yaml, speed_ms: 19.0, duration_s: 6.0}
+      - {id: double_lane_change_21, scenario: ../scenarios/double_lane_change.yaml, speed_ms: 21.0, duration_s: 6.0}
+    robustness:
+      - {id: mass_plus_10pct_circle, scenario: ../scenarios/circle_track.yaml, speed_ms: 15.0, duration_s: 7.0,
+         overrides: {vehicle.mass_kg: 1760.0}}
+      - {id: mass_plus_10pct_dlc, scenario: ../scenarios/double_lane_change.yaml, speed_ms: 17.0, duration_s: 8.0,
+         overrides: {vehicle.mass_kg: 1760.0}}
+      - {id: mu_minus_10pct_circle, scenario: ../scenarios/circle_track.yaml, speed_ms: 15.0, duration_s: 7.0,
+         overrides: {tyre.friction.mu: 0.9044508866570654}}     # 0.9 * Fit-mu 1.0049454296189615
+      - {id: mu_minus_10pct_dlc, scenario: ../scenarios/double_lane_change.yaml, speed_ms: 17.0, duration_s: 8.0,
+         overrides: {tyre.friction.mu: 0.9044508866570654}}
+    q11_nominal:           # Q11.3: vorab festgelegte machbare Referenzmanöver (Training + Hold-out, volle Dauer)
+      - {id: circle_track_15, scenario: ../scenarios/circle_track.yaml, speed_ms: 15.0, duration_s: 8.0}
+      - {id: circle_track_19, scenario: ../scenarios/circle_track.yaml, speed_ms: 19.0, duration_s: 8.0}
+      - {id: double_lane_change_17, scenario: ../scenarios/double_lane_change.yaml, speed_ms: 17.0, duration_s: 9.0}
+      - {id: double_lane_change_21, scenario: ../scenarios/double_lane_change.yaml, speed_ms: 21.0, duration_s: 9.0}
+    q11_robust:            # Parameterstörungen ohne Nachoptimierung (V8-Faktoren) und gemischte Fahrbahn
+      - {id: mass_plus_10pct_circle, scenario: ../scenarios/circle_track.yaml, speed_ms: 15.0, duration_s: 8.0,
+         overrides: {vehicle.mass_kg: 1760.0}}
+      - {id: mass_plus_10pct_dlc, scenario: ../scenarios/double_lane_change.yaml, speed_ms: 17.0, duration_s: 9.0,
+         overrides: {vehicle.mass_kg: 1760.0}}
+      - {id: mu_minus_10pct_circle, scenario: ../scenarios/circle_track.yaml, speed_ms: 15.0, duration_s: 8.0,
+         overrides: {tyre.friction.mu: 0.9044508866570654}}
+      - {id: mu_minus_10pct_dlc, scenario: ../scenarios/double_lane_change.yaml, speed_ms: 17.0, duration_s: 9.0,
+         overrides: {tyre.friction.mu: 0.9044508866570654}}
+      - {id: mixed_mu_lane_change, scenario: ../scenarios/mixed_mu_lane_change.yaml}
+    q11_degraded:          # Q11.4: niedriger Reibwert, Aktuatorsättigung, unmögliche Anforderung
+      - {id: wet_dlc_17, scenario: ../scenarios/double_lane_change.yaml, speed_ms: 17.0, duration_s: 9.0,
+         overrides: {road.default_surface.mu: 0.4}}
+      - {id: wet_circle_19, scenario: ../scenarios/circle_track.yaml, speed_ms: 19.0, duration_s: 8.0,
+         overrides: {road.default_surface.mu: 0.4}}
+      - {id: saturated_dlc_21, scenario: ../scenarios/double_lane_change.yaml, speed_ms: 21.0, duration_s: 9.0,
+         overrides: {allocation.max_delta_nm: 25.0}}
+      - {id: impossible_dlc_30, scenario: ../scenarios/double_lane_change.yaml, speed_ms: 30.0, duration_s: 7.0}
+      - {id: impossible_wet_dlc_24, scenario: ../scenarios/double_lane_change.yaml, speed_ms: 24.0, duration_s: 8.0,
+         overrides: {road.default_surface.mu: 0.4}}

@@ -1,0 +1,20 @@
+# Baseline-Formparameter mit elliptischem Combined-Slip-Surrogat in den Default-Skalen von
+# physics.combined_slip.CombinedSlipShape (entspricht CombinedSlipTyre() mit TyreParameters(),
+# z. B. Basismodell von physics.road.FrictionMap in den V5-Grip-Tests). Erbt per extends.
+schema_version: 1
+extends: pacejka_baseline.yaml
+
+tyre:
+  id: combined_slip
+  description: Baseline-MF mit elliptischer Opposing-Slip-Dämpfung (Surrogat, nicht Pacejka Gx/Gy)
+  provenance:
+    source_type: synthetic
+    experimentally_validated: false
+    origin: torquevector.physics.combined_slip.CombinedSlipShape-Defaults + TyreParameters-Defaults
+    notes: Surrogat-Kopplung; keine MF5.2/MF6.x-Combined-Slip-Gleichungen.
+  combined_slip:
+    model: elliptic_damping_surrogate
+    alpha_scale_rad: 0.17
+    kappa_scale: 0.19
+    lateral_peak_fraction: 1.0
+    longitudinal_peak_fraction: 1.0
